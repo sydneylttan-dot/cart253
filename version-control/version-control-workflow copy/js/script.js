@@ -30,7 +30,7 @@ function draw() {
 
     // Draw a pyramid
     // How many levels for the pyramid
-    const levels = 10;
+    const levels = 20;
     // Loop through every level (backwards)
     for (let level = levels; level > 0; level--) {
         // Draw this layer
@@ -40,9 +40,9 @@ function draw() {
         // level 10 will be 255(white)
         const shade = map(level, 1, levels, 10, 255);
         // No line around the levels
-        noStroke();
+        // noStroke();
         // Set the fill colour to our shade (RGB)
-        fill(shade, shade, 0);
+        fill(shade, shade, 255);
         // Draw rectangles from the centre
         rectMode(CENTER);
         // Draw the rectangle in the centre of the canvas
@@ -58,8 +58,8 @@ function draw() {
     // No line around the shape
     noStroke();
     // Make it red (RGB)
-    fill(255, 0, 0);
+    fill(0, 0, 0);
     // Draw a 100x100 circle at the mouse position
-    ellipse(mouseX, mouseY, 100, 100);
+    ellipse(mouseX, mouseY, 50, 50);
     pop();
 }
