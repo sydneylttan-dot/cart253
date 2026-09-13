@@ -1,6 +1,6 @@
-# TITLE OF PROJECT
+# Sydney's Catalogue of Projects
 
-AUTHOR NAME
+SYDNEY TAN
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
