@@ -21,8 +21,7 @@ This bit should have some images of the program running so that the reader has a
 [Reflective Journal]
 (URL_FOR_THE_RUNNING_PROJECT)
 
-[p5]
-(https://editor.p5js.org/tinglt/sketches)
+[p5](https://editor.p5js.org/tinglt/sketches)
 
 > - This project uses [p5.js](https://p5js.org).
 > - The clown image is a capture of the clown from the Apple emoji character set.
