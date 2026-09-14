@@ -18,6 +18,6 @@ All of my projects and prototypes will be added to this section. Temporary image
 
 ## Links
 
-[Reflective Journal](URL_FOR_THE_RUNNING_PROJECT)
+[*Reflective Journal*](https://sydneylttan-dot.github.io/cart253/journal)
 
-[p5.js](https://editor.p5js.org/tinglt/sketches)
+[*p5.js*](https://editor.p5js.org/tinglt/sketches)
