@@ -6,6 +6,8 @@
 
 function setup() {
     createCanvas(800, 800);
+
+    describe('A green front facing frog on a green background');
 }
 
 
@@ -14,6 +16,7 @@ function draw() {
     background(120, 220, 100);
 
     //BACK LEGS
+    describe('The frogs back legs are drawn behind the body and are made of ellipses and triangles with circles at their lowest end');
     push();
     fill(80, 170, 40);
     noStroke();
@@ -34,6 +37,7 @@ function draw() {
     pop();
 
     //BODY
+    describe('The frogs body is made with one green ellipse serving as base and one slightly yellowish white ellipse for the belly')
     push();
     fill(80, 170, 40);
     noStroke();
@@ -46,6 +50,7 @@ function draw() {
     pop();
 
     //FRONT LEGS
+    describe('Similarly to the frogs back legs,he frogs front legs are made with ellipses and triangles with circles at their lowest end. The front legs are drawn above the body.')
     push();
     fill(80, 170, 40);
     noStroke();
@@ -74,6 +79,7 @@ function draw() {
     pop();
 
     //HEAD
+    describe('The frogs head is made with one big green ellipse that is centered to the canvas.')
     push();
     fill(80, 170, 40);
     noStroke();
@@ -81,6 +87,7 @@ function draw() {
     pop();
 
     //EYES
+    describe('The frogs eyes are made with 2 green circles serving as base. There are 2 yellow ellipse above them. These yellow ellipses serve as eyeballs and are placed slightly towards the outside of the eye sockets. There is an additional black ellipse on each of the yellow ellipses. These black ellipses are wider and serve as the frogs pupils.')
     push();
     fill(80, 170, 40);
     noStroke();
@@ -101,6 +108,7 @@ function draw() {
     pop();
 
     //MOUTH
+    describe('Unlike the rest of the frog, the mouth is made of lines instead of shapes. The mouth is a slight brownish colour and is made of 2 lines that form a slight V at the center of the frogs head.')
     push();
     strokeWeight(5);
     stroke(170, 100, 20);
@@ -109,6 +117,7 @@ function draw() {
     pop();
 
     //NOSTRILS
+    describe('The frogs nostrils are 2 brownish ellipses placed above the frogs nose.')
     push();
     fill(170, 100, 20);
     noStroke();
