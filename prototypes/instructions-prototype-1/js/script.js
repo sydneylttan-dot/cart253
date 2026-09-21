@@ -1,24 +1,31 @@
 /**
  * Instructions Prototype 1
  * Sydney Tan
- * 
+ */
 
 
-"use strict";
-
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
 function setup() {
     createCanvas(800, 800);
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
 function draw() {
     background(120, 220, 100);
+
+    //LEGS
+
+    push();
+    fill(80, 170, 40);
+    noStroke();
+    ellipse(200, 600, 300, 150);
+    ellipse(600, 600, 300, 150);
+    triangle(130, 640, 70, 710, 180, 640);
+    circle(80, 700, 30);
+    triangle(670, 640, 730, 710, 620, 640);
+    circle(720, 700, 30);
+    triangle(180, 640, 190, )
+    pop();
 
     //BODY
     push();
@@ -74,5 +81,4 @@ function draw() {
     ellipse(350, 390, 20, 10);
     ellipse(450, 390, 20, 10);
     pop();
-
 }
