@@ -13,8 +13,7 @@ function setup() {
 function draw() {
     background(120, 220, 100);
 
-    //LEGS
-
+    //BACK LEGS
     push();
     fill(80, 170, 40);
     noStroke();
@@ -24,7 +23,14 @@ function draw() {
     circle(80, 700, 30);
     triangle(670, 640, 730, 710, 620, 640);
     circle(720, 700, 30);
-    triangle(180, 640, 190, )
+    triangle(150, 640, 130, 720, 180, 640);
+    circle(130, 710, 30);
+    triangle(650, 640, 670, 720, 620, 640);
+    circle(670, 710, 30);
+    triangle(180, 640, 190, 720, 210, 640);
+    circle(190, 710, 30);
+    triangle(620, 640, 610, 720, 590, 640);
+    circle(610, 710, 30);
     pop();
 
     //BODY
@@ -37,6 +43,16 @@ function draw() {
     fill(225, 225, 170);
     noStroke();
     ellipse(width / 2, height / 2 + 170, 350, 270);
+    pop();
+
+    //FRONT LEGS
+    push();
+    fill(80, 170, 40);
+    noStroke();
+    angleMode(DEGREES);
+    rotate(20);
+    ellipse(450, 550, 250, 70);
+
     pop();
 
     //HEAD
