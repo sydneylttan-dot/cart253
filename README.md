@@ -18,7 +18,7 @@ Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.
 
 ## Assignements
 
-
+[*Assignment 1*]
 
 
 ## Links
