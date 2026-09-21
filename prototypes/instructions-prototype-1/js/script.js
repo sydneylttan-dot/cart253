@@ -50,9 +50,27 @@ function draw() {
     fill(80, 170, 40);
     noStroke();
     angleMode(DEGREES);
+    push();
+    rotate(-20);
+    ellipse(-30, 700, 70, 200);
+    pop();
+    push();
     rotate(20);
-    ellipse(450, 550, 250, 70);
-
+    ellipse(780, 425, 70, 200);
+    pop();
+    square(200)
+    triangle(210, 720, 180, 780, 240, 740);
+    circle(190, 770, 30);
+    triangle(600, 720, 630, 780, 570, 740);
+    circle(620, 770, 30);
+    triangle(205, 730, 250, 790, 257, 747);
+    circle(250, 780, 30);
+    triangle(595, 730, 550, 790, 543, 747);
+    circle(550, 780, 30);
+    triangle(240, 740, 300, 760, 250, 710);
+    circle(290, 750, 30);
+    triangle(560, 740, 500, 760, 550, 710);
+    circle(510, 750, 30);
     pop();
 
     //HEAD
