@@ -8,7 +8,7 @@ Sydney Tan
 
 Assignment 2 of CART 253. Here are my 3 prototypes for the instructions prototype assignment.
 
-PROTOTYPE 1: Johnny the Frog: [![PROTOTYPE 1: Johnny the Frog](../images/JohnnyTheFrog.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
+PROTOTYPE 1: Johnny the Frog: [![PROTOTYPE 1: Johnny the Frog](../images/JohnnytheFrog.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
 
 
 PROTOTYPE 2: Beats: [![Prototype 2: Beats](../images/Beats2.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
