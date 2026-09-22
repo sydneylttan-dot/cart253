@@ -16,8 +16,7 @@ PROTOTYPE 2: Beats: [![Prototype 2: Beats](./images/Beats2.png)](https://sydneyl
 
 PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](./images/Crossroads.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-3/)
 
-
-Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.io/cart253/project1)
+[Reflective Journal: Entry #2](https://sydneylttan-dot.github.io/cart253/journal#entry-2)
 
 ## Attribution
 

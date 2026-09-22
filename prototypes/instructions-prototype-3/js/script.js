@@ -75,6 +75,8 @@ function draw() {
 
     pop();
 
+    //white lines on the bottom left
+    describe('A 3rd set of white rectangles that are cut at one of the angles of the 2nd set of lines')
     push();
     shearY(-10);
     rect(0, 650, 50, 700)
@@ -84,6 +86,7 @@ function draw() {
     rect(400, 485, 50, 700)
     pop();
 
+    //rectangle to hide the bit of white rectangle that sticks out of the lines
     push();
     fill(40)
     rect(433, 175, 500, 30);
