@@ -22,7 +22,7 @@ PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](../images/Crossroads.png)](
 
 > - This project uses [p5.js](https://p5js.org).
 > - The p5.js frog (Prototype 1) was based off of this reference picture found on photoAC:
-[![Frog Reference](../images/instructionsprototype1frogref.png)](https://en.photo-ac.com/photo/29078604/front-view-of-frog#google_vignette)
+[![Frog Reference](../images/instructionsprototype1frogref.jpeg)](https://en.photo-ac.com/photo/29078604/front-view-of-frog#google_vignette)
 
 ## License
 
