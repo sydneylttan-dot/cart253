@@ -8,13 +8,13 @@ Sydney Tan
 
 Assignment 2 of CART 253. Here are my 3 prototypes for the instructions prototype assignment.
 
-PROTOTYPE 1: Johnny the Frog: [![PROTOTYPE 1: Johnny the Frog](./images/JohnnyTheFrog.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
+PROTOTYPE 1: Johnny the Frog: [![PROTOTYPE 1: Johnny the Frog](../images/JohnnyTheFrog.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
 
 
-PROTOTYPE 2: Beats: [![Prototype 2: Beats](./images/Beats2.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
+PROTOTYPE 2: Beats: [![Prototype 2: Beats](../images/Beats2.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
 
 
-PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](./images/Crossroads.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-3/)
+PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](../images/Crossroads.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-3/)
 
 [Reflective Journal: Entry #2](https://sydneylttan-dot.github.io/cart253/journal#entry-2)
 
@@ -22,7 +22,7 @@ PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](./images/Crossroads.png)](h
 
 > - This project uses [p5.js](https://p5js.org).
 > - The p5.js frog (Prototype 1) was based off of this reference picture found on photoAC:
-[![Frog Reference](./images/instructionsprototype1frogref.png)](https://en.photo-ac.com/photo/29078604/front-view-of-frog#google_vignette)
+[![Frog Reference](../images/instructionsprototype1frogref.png)](https://en.photo-ac.com/photo/29078604/front-view-of-frog#google_vignette)
 
 ## License
 
