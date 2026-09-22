@@ -1,4 +1,4 @@
-# Instructions Prototypes
+# Prototyping: Instructions
 
 Sydney Tan
 
@@ -8,12 +8,16 @@ Sydney Tan
 
 Assignment 2 of CART 253. Here are my 3 prototypes for the instructions prototype assignment.
 
-[PROTOTYPE 1: frog](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
+PROTOTYPE 1: Johnny the Frog: [![PROTOTYPE 1: Johnny the Frog](./images/JohnnyTheFrog.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
 
-[Prototype 2: uh, random thing](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
 
-[Prototype 3:]()
+PROTOTYPE 2: Beats: [![Prototype 2: Beats](./images/Beats2.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
 
+
+PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](./images/Crossroads.png)](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-3/)
+
+
+Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.io/cart253/project1)
 
 ## Attribution
 
