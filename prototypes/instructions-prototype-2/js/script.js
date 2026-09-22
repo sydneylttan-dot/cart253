@@ -10,7 +10,7 @@ let bgSize
 
 function setup() {
     createCanvas(800, 800);
-    describe('A project that changes its appearanceaccording to the mouse position. The purpose of this prototype was to refamiliarize myself with mouseX and mouseY as well as random and variables. The project works best when the mouse moves quickly.')
+    describe('A project that changes its appearance according to the mouse position. The purpose of this prototype was to refamiliarize myself with mouseX and mouseY as well as random and variables. The project works best when the mouse moves quickly.')
 
     //size variables
     circleSize = 100;
