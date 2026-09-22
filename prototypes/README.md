@@ -2,14 +2,17 @@
 
 Sydney Tan
 
-[View this project online](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
+[View this project online](https://sydneylttan-dot.github.io/cart253/prototypes/)
 
 ## Description
 
 Assignment 2 of CART 253. Here are my 3 prototypes for the instructions prototype assignment.
 
 [PROTOTYPE 1: frog](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-1/)
-[]
+
+[Prototype 2: uh, random thing](https://sydneylttan-dot.github.io/cart253/prototypes/instructions-prototype-2/)
+
+[Prototype 3:]()
 
 
 ## Attribution
