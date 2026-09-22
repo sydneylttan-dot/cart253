@@ -12,8 +12,11 @@ let circleY
 function setup() {
     createCanvas(800, 800);
 
+    //the circle's x and y values are randomized once the canvas is created
     circleX = random(100, 700)
     circleY = random(100, 700)
+
+    describe('A series of dark gray and white alternating lines that break off at an angle made with shear. There is a circle whos position is randomized when the mouse is clicked')
 
 }
 
@@ -22,6 +25,7 @@ function setup() {
 function draw() {
     background(40);
 
+    //shear test
     noStroke();
     // push();
     // shearX(100);
@@ -40,6 +44,8 @@ function draw() {
     // rect(600, 600, 50, 500);
     // pop();
 
+    //white lines on the right
+    describe('A series of white rectangles that are cut at an angle')
     push();
     shearX(10);
     rect(300, -4, 700, 50);
@@ -51,7 +57,8 @@ function draw() {
     rect(300, 605, 700, 51);
     rect(300, 705, 700, 51);
 
-
+    //white lines on the left
+    describe('Another series of white rectangles that are cut at the same angle as the previous, but who are also slanted up')
     push();
     shearY(-10);
     rect(-200, 50, 500, 50);
@@ -69,8 +76,25 @@ function draw() {
     pop();
 
     push();
-    shearX(mouseX / mouseY);
-    shearY(mouseY / mouseX);
+    shearY(-10);
+    rect(0, 650, 50, 700)
+    rect(100, 580, 50, 700)
+    rect(200, 570, 50, 700)
+    rect(300, 520, 50, 700)
+    rect(400, 485, 50, 700)
+    pop();
+
+    push();
+    fill(40)
+    rect(433, 175, 500, 30);
+    pop();
+
+
+    //circle and line
+    describe('A white circle whos x and y values are randomized at the start of the code. When the mouse is clicked, the circles x and y values are randomized again.')
+    push();
+    // shearX(mouseX / mouseY);
+    // shearY(mouseY / mouseX);
     // shearY(mouseY);
     noFill();
     stroke(255);
@@ -78,12 +102,13 @@ function draw() {
     circle(circleX, circleY, 100)
     stroke(255);
     strokeWeight(50);
-    line(0, 500, 1000, 50);
+    // line(0, 500, 1000, 50);
     pop();
 
 
 }
 
+describe('The function that randomizes the circles x and y values when the mouse is clicked. This part of the code is put in a separate function to prevent the circle from moving every frame')
 function mouseClicked() {
     circleX = random(100, 700)
     circleY = random(100, 700)
