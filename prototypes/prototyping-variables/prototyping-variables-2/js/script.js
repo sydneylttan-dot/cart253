@@ -1,6 +1,9 @@
 /**
- * Prototyping:Variables 2
+ * Prototyping: Variables 2 : Bubbles
  * Sydney Tan
+ * 
+ * A project where u watch multicoloured bubbles ascend
+ * uses a lot of randoms and variables
  */
 
 "use strict";
@@ -11,6 +14,7 @@
 
 //VARIABLES
 
+//timer so some of the bubbles' arrival can be slightly delayed
 let timer
 
 let bubbles1 = {
@@ -73,6 +77,10 @@ let bubbles6 = {
     alpha: 255
 }
 
+//bubbles' inital values are set up here
+//timer's value is set to 0
+//each of the bubbles have slightly different initial values
+//most are randomized
 function setup() {
     createCanvas(800, 800);
     timer = 0
@@ -116,14 +124,18 @@ function setup() {
 
 
 /**
+ * draws the bubbles
+ * moves the bubbles
+ * adds new bubbles when the old one has left the canvas
 */
 function draw() {
     background(40)
     Bubble();
 
+    //timer's value increases
     timer = timer + 1
 
-
+    //bubble 1
     bubbles1.y = bubbles1.y - random(0.1, 1)
     bubbles1.alpha = bubbles1.alpha - random(0.1, 1)
     if (bubbles1.y < 400) {
@@ -136,6 +148,7 @@ function draw() {
         bubbles1.b = random(100, 255)
     }
 
+    //bubble 2
     Bubble2();
     bubbles2.y = bubbles2.y - random(0.7, 1)
     bubbles2.alpha = bubbles2.alpha - random(0.1, 0.6)
@@ -149,6 +162,8 @@ function draw() {
         bubbles2.b = random(100, 255)
     }
 
+    //bubble 3
+    //bubble 3 appears when the timer reaches 30 and becomes more and more red as time passes
     if (timer >= 30) {
         Bubble3();
         bubbles3.y = bubbles3.y - random(0.8, 2)
@@ -165,8 +180,9 @@ function draw() {
         }
     }
 
+    //bubble 4
+    //bubble 4 appears later than bubble 3 and becomes more and more red/blue
     if (timer >= 100) {
-
         Bubble4();
         bubbles4.y = bubbles4.y - random(0.5, 1.5)
         bubbles4.alpha = bubbles4.alpha - random(0.1, 0.3)
@@ -183,6 +199,8 @@ function draw() {
         }
     }
 
+    //bubble 5
+    //bubble 5 also appears depending on the timer's value and changes r and b values
     if (timer >= 150) {
         Bubble5();
         bubbles5.y = bubbles5.y - random(0.5, 1.5)
@@ -200,14 +218,17 @@ function draw() {
         }
     }
 
-    if (timer >= 200) {
+
+    //bubble 6
+    //bubble 6 becomes whiter as it goes higher
+    if (timer >= 220) {
         Bubble6();
         bubbles6.y = bubbles6.y - random(1, 1.5)
         bubbles6.alpha = bubbles6.alpha - random(0.5, 1)
         bubbles6.r = bubbles6.r + 1
         bubbles6.g = bubbles6.g + 1
         bubbles6.b = bubbles6.b + 1
-        if (bubbles6.y < -300) {
+        if (bubbles6.y < 0) {
             bubbles6.y = 900
             bubbles6.alpha = 255
             bubbles6.x = random(20, 780)
@@ -220,6 +241,9 @@ function draw() {
 
 }
 
+
+//bubble functions that draw the initial bubble when added to draw
+//all of them r the same except for the bubble number associated with them
 function Bubble() {
     fill(bubbles1.r, bubbles1.g, bubbles1.b, bubbles1.alpha)
     noStroke()
