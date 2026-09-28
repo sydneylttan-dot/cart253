@@ -2,7 +2,7 @@
 
 Sydney Tan
 
-[View this project online](https://sydneylttan-dot.github.io/cart253/prototypes/)
+[View this project online](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/)
 
 ## Description
 
@@ -11,7 +11,7 @@ Assignment 3 of CART 253. Here are my 3 prototypes for the prototyping variables
 PROTOTYPE 1: The Passing of Seasons: [![PROTOTYPE 1: The Passing of Seasons](../../images/passingofseasons.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-1/)
 
 
-PROTOTYPE 2: Beats: [![Prototype 2: Beats](../../images/.png)]()
+PROTOTYPE 2: Bubbles: [![Prototype 2: Beats](../../images/bubbles.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-2/)
 
 
 PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](../../images/.png)]()

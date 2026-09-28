@@ -4,6 +4,7 @@
  * 
  * A project where u watch multicoloured bubbles ascend
  * uses a lot of randoms and variables
+ * wouldve probably been better with a shorter canvas
  */
 
 "use strict";
