@@ -11,6 +11,8 @@
 
 //VARIABLES
 
+let timer
+
 let bubbles1 = {
     x: 400,
     y: 700,
@@ -31,19 +33,38 @@ let bubbles2 = {
     alpha: 255
 }
 
+let bubbles3 = {
+    x: 400,
+    y: 700,
+    size: 40,
+    r: 100,
+    g: 100,
+    b: 100,
+    alpha: 255
+}
+
 function setup() {
     createCanvas(800, 800);
+
+    timer = timer + 1
+
     bubbles1.x = random(-100, 900)
-    bubbles1.size = random(10, 400)
+    bubbles1.size = random(10, 300)
     bubbles1.r = random(100, 255)
     bubbles1.g = random(100, 255)
     bubbles1.b = random(100, 255)
 
     bubbles2.x = random(-100, 900)
-    bubbles2.size = random(10, 400)
+    bubbles2.size = random(10, 200)
     bubbles2.r = random(100, 255)
     bubbles2.g = random(100, 255)
     bubbles2.b = random(100, 255)
+
+    bubbles3.x = random(20, 780)
+    bubbles3.size = random(50, 100)
+    bubbles3.r = random(190, 255)
+    bubbles3.g = random(100, 150)
+    bubbles3.b = random(100, 160)
 }
 
 
@@ -77,6 +98,20 @@ function draw() {
         bubbles2.g = random(100, 255)
         bubbles2.b = random(100, 255)
     }
+
+    Bubble3();
+    bubbles3.y = bubbles3.y - random(0.8, 2)
+    bubbles3.alpha = bubbles3.alpha - random(0.1, 0.3)
+    bubbles3.r = bubbles3.r + 2
+    if (bubbles3.y < -100) {
+        bubbles3.y = 1000
+        bubbles3.alpha = 255
+        bubbles3.x = random(-100, 900)
+        bubbles3.size = random(10, 400)
+        bubbles3.r = random(100, 255)
+        bubbles3.g = random(100, 255)
+        bubbles3.b = random(100, 255)
+    }
 }
 
 function Bubble() {
@@ -89,4 +124,10 @@ function Bubble2() {
     fill(bubbles2.r, bubbles2.g, bubbles2.b, bubbles2.alpha)
     noStroke()
     circle(bubbles2.x, bubbles2.y, bubbles2.size)
+}
+
+function Bubble3() {
+    fill(bubbles3.r, bubbles3.g, bubbles3.b, bubbles3.alpha)
+    noStroke()
+    circle(bubbles3.x, bubbles3.y, bubbles3.size)
 }
