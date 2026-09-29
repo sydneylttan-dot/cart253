@@ -54,12 +54,24 @@ function draw() {
         bg.r = 40
     }
 
+    if (bg.r > 255) {
+        bg.r = 255
+    }
+
     if (bg.g < 40) {
         bg.g = 40
     }
 
+    if (bg.g > 255) {
+        bg.g = 255
+    }
+
     if (bg.b < 40) {
         bg.b = 40
+    }
+
+    if (bg.b > 255) {
+        bg.b = 255
     }
 
     stroke(255);
@@ -121,13 +133,13 @@ function draw() {
     strokeWeight(stroke950);
     line(950, 0, 950, 500);
 
+
     if (mouseX >= 45 && mouseX <= 55) {
         stroke50 = 5
         lowerBG = false
         bg.r = bg.r + 1
     } else {
         stroke50 = 1
-        lowerBG = true
     }
 
     if (mouseX >= 95 && mouseX <= 105) {
@@ -137,7 +149,6 @@ function draw() {
         bg.g = bg.g + 1
     } else {
         stroke100 = 1
-        lowerBG = true
     }
 
     if (mouseX >= 145 && mouseX <= 155) {
@@ -240,6 +251,10 @@ function draw() {
         stroke950 = 5
     } else {
         stroke950 = 1
+    }
+
+    if (mouseX < 45 || mouseX > 55 && mouseX < 95) {
+        lowerBG = true;
     }
 
     if (lowerBG == true) {
