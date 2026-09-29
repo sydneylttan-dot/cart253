@@ -1,13 +1,19 @@
 /**
- * Title of Project
- * Author Name
+ * Prototyping: Variables 3: Harp of Colours
+ * Sydney Tan
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ *
+ * Move your mouse over one of the lines and see how the background reacts
+ * Each line changes the bg in a different manner
  */
 
 "use strict";
 
+//the strokeWeight variables for every line
+//my tiny brain couldnt think of a better way of personalizing every one of them other than this
+//at some point i forgot to add stroke 150 in this and it broke my entire code
+//i was losing my mind trying to find the mistake
+//found it and felt really dumb :')
 let stroke50 = 1
 let stroke100 = 1
 let stroke150 = 1
@@ -28,8 +34,10 @@ let stroke850 = 1
 let stroke900 = 1
 let stroke950 = 1
 
+//bool that indicates when the bg values should be lowered or not
 let lowerBG = true;
 
+//bg rgb values
 let bg = {
     r: 40,
     g: 40,
@@ -37,7 +45,7 @@ let bg = {
 }
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * creating a canvas
 */
 function setup() {
     createCanvas(1000, 500)
@@ -45,11 +53,15 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    //drawing a bg with variables
     background(bg.r, bg.g, bg.b);
 
+
+    //upper and lower caps for the bg (bg cant go lower than 40 or higher than 255)
+    //while testing, the bg values would go over 255 very quickly and it would take forever for them to return to gray
+    //----------------------------------------------------------------------------------------------------//
     if (bg.r < 40) {
         bg.r = 40
     }
@@ -73,7 +85,12 @@ function draw() {
     if (bg.b > 255) {
         bg.b = 255
     }
+    //----------------------------------------------------------------------------------------------------//
 
+
+    //drawing the lines (intervals of 50)
+    //did not take a lot of time to write, nope
+    //----------------------------------------------------------------------------------------------------//
     stroke(255);
 
     strokeWeight(stroke50);
@@ -132,8 +149,19 @@ function draw() {
 
     strokeWeight(stroke950);
     line(950, 0, 950, 500);
+    //----------------------------------------------------------------------------------------------------//
 
 
+    //if the mouse is on a line, the bg colour will gradually change
+    //each line increases the bg colour in a different way
+    //the lines also become bolder when the mouse is hovering over them
+    //while the mouse is over a line, the lowerBG bool is turned off so the bg wont get darker
+    //tried many iterations of this, they didnt work
+    //this one works
+    //it's really long and ugly but it works :D
+    //changing all of the values for each of the lines was such a pain tho
+    //im still sane somehow
+    //----------------------------------------------------------------------------------------------------//
     if (mouseX >= 45 && mouseX <= 55) {
         stroke50 = 5
         lowerBG = false
@@ -308,11 +336,15 @@ function draw() {
     } else {
         stroke950 = 1
     }
+    //----------------------------------------------------------------------------------------------------//
 
+
+    //if the mouse isnt on a line, the bg should be lowered
     if (mouseX < 45 || mouseX > 55 && mouseX < 95 || mouseX > 105 && mouseX < 145 || mouseX > 155 && mouseX < 195 || mouseX > 205 && mouseX < 245 || mouseX > 255 && mouseX < 295 || mouseX > 305 && mouseX < 345 || mouseX > 355 && mouseX < 395 || mouseX > 405 && mouseX < 445 || mouseX > 455 && mouseX < 495 || mouseX > 505 && mouseX < 545 || mouseX > 555 && mouseX < 595 || mouseX > 605 && mouseX < 645 || mouseX > 655 && mouseX < 695 || mouseX > 705 && mouseX < 745 || mouseX > 755 && mouseX < 795 || mouseX > 805 && mouseX < 845 || mouseX > 855 && mouseX < 895 || mouseX > 905 && mouseX < 945 || mouseX > 955) {
         lowerBG = true;
     }
 
+    //if the lowerBG bool is true, the bg will slowly return to gray
     if (lowerBG == true) {
         bg.r = bg.r - 1
         bg.g = bg.g - 1
