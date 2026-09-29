@@ -28,6 +28,14 @@ let stroke850 = 1
 let stroke900 = 1
 let stroke950 = 1
 
+let lowerBG = true;
+
+let bg = {
+    r: 40,
+    g: 40,
+    b: 40
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -40,7 +48,19 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background(40);
+    background(bg.r, bg.g, bg.b);
+
+    if (bg.r < 40) {
+        bg.r = 40
+    }
+
+    if (bg.g < 40) {
+        bg.g = 40
+    }
+
+    if (bg.b < 40) {
+        bg.b = 40
+    }
 
     stroke(255);
 
@@ -103,14 +123,21 @@ function draw() {
 
     if (mouseX >= 45 && mouseX <= 55) {
         stroke50 = 5
+        lowerBG = false
+        bg.r = bg.r + 1
     } else {
         stroke50 = 1
+        lowerBG = true
     }
 
     if (mouseX >= 95 && mouseX <= 105) {
         stroke100 = 5
+        lowerBG = false
+        bg.r = bg.r + 1
+        bg.g = bg.g + 1
     } else {
         stroke100 = 1
+        lowerBG = true
     }
 
     if (mouseX >= 145 && mouseX <= 155) {
@@ -130,4 +157,95 @@ function draw() {
     } else {
         stroke250 = 1
     }
+
+    if (mouseX >= 295 && mouseX <= 305) {
+        stroke300 = 5
+    } else {
+        stroke300 = 1
+    }
+
+    if (mouseX >= 345 && mouseX <= 355) {
+        stroke350 = 5
+    } else {
+        stroke350 = 1
+    }
+
+    if (mouseX >= 395 && mouseX <= 405) {
+        stroke400 = 5
+    } else {
+        stroke400 = 1
+    }
+
+    if (mouseX >= 445 && mouseX <= 455) {
+        stroke450 = 5
+    } else {
+        stroke450 = 1
+    }
+
+    if (mouseX >= 495 && mouseX <= 505) {
+        stroke500 = 5
+    } else {
+        stroke500 = 1
+    }
+
+    if (mouseX >= 545 && mouseX <= 555) {
+        stroke550 = 5
+    } else {
+        stroke550 = 1
+    }
+
+    if (mouseX >= 595 && mouseX <= 605) {
+        stroke600 = 5
+    } else {
+        stroke600 = 1
+    }
+
+    if (mouseX >= 645 && mouseX <= 655) {
+        stroke650 = 5
+    } else {
+        stroke650 = 1
+    }
+
+    if (mouseX >= 695 && mouseX <= 705) {
+        stroke700 = 5
+    } else {
+        stroke700 = 1
+    }
+
+    if (mouseX >= 745 && mouseX <= 755) {
+        stroke750 = 5
+    } else {
+        stroke750 = 1
+    }
+
+    if (mouseX >= 795 && mouseX <= 805) {
+        stroke800 = 5
+    } else {
+        stroke800 = 1
+    }
+
+    if (mouseX >= 845 && mouseX <= 855) {
+        stroke850 = 5
+    } else {
+        stroke850 = 1
+    }
+
+    if (mouseX >= 895 && mouseX <= 905) {
+        stroke900 = 5
+    } else {
+        stroke900 = 1
+    }
+
+    if (mouseX >= 945 && mouseX <= 955) {
+        stroke950 = 5
+    } else {
+        stroke950 = 1
+    }
+
+    if (lowerBG == true) {
+        bg.r = bg.r - 1
+        bg.g = bg.g - 1
+        bg.b = bg.b - 1
+    }
+
 }
