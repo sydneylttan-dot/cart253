@@ -21,7 +21,7 @@ All of my projects and prototypes will be added to this section.
 Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.io/cart253/project1)
 
 
-## Assignements
+## Assignments
 
 [*Prototyping: Instructions*](https://sydneylttan-dot.github.io/cart253/prototypes/)
 
