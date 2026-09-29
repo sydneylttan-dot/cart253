@@ -153,107 +153,141 @@ function draw() {
 
     if (mouseX >= 145 && mouseX <= 155) {
         stroke150 = 5
+        lowerBG = false
+
     } else {
         stroke150 = 1
     }
 
     if (mouseX >= 195 && mouseX <= 205) {
         stroke200 = 5
+        lowerBG = false
+
     } else {
         stroke200 = 1
     }
 
     if (mouseX >= 245 && mouseX <= 255) {
         stroke250 = 5
+        lowerBG = false
+
     } else {
         stroke250 = 1
     }
 
     if (mouseX >= 295 && mouseX <= 305) {
         stroke300 = 5
+        lowerBG = false
+
     } else {
         stroke300 = 1
     }
 
     if (mouseX >= 345 && mouseX <= 355) {
         stroke350 = 5
+        lowerBG = false
+
     } else {
         stroke350 = 1
     }
 
     if (mouseX >= 395 && mouseX <= 405) {
         stroke400 = 5
+        lowerBG = false
+
     } else {
         stroke400 = 1
     }
 
     if (mouseX >= 445 && mouseX <= 455) {
         stroke450 = 5
+        lowerBG = false
+
     } else {
         stroke450 = 1
     }
 
     if (mouseX >= 495 && mouseX <= 505) {
         stroke500 = 5
+        lowerBG = false
+
     } else {
         stroke500 = 1
     }
 
     if (mouseX >= 545 && mouseX <= 555) {
         stroke550 = 5
+        lowerBG = false
+
     } else {
         stroke550 = 1
     }
 
     if (mouseX >= 595 && mouseX <= 605) {
         stroke600 = 5
+        lowerBG = false
+
     } else {
         stroke600 = 1
     }
 
     if (mouseX >= 645 && mouseX <= 655) {
         stroke650 = 5
+        lowerBG = false
+
     } else {
         stroke650 = 1
     }
 
     if (mouseX >= 695 && mouseX <= 705) {
         stroke700 = 5
+        lowerBG = false
+
     } else {
         stroke700 = 1
     }
 
     if (mouseX >= 745 && mouseX <= 755) {
         stroke750 = 5
+        lowerBG = false
+
     } else {
         stroke750 = 1
     }
 
     if (mouseX >= 795 && mouseX <= 805) {
         stroke800 = 5
+        lowerBG = false
+
     } else {
         stroke800 = 1
     }
 
     if (mouseX >= 845 && mouseX <= 855) {
         stroke850 = 5
+        lowerBG = false
+
     } else {
         stroke850 = 1
     }
 
     if (mouseX >= 895 && mouseX <= 905) {
         stroke900 = 5
+        lowerBG = false
+
     } else {
         stroke900 = 1
     }
 
     if (mouseX >= 945 && mouseX <= 955) {
         stroke950 = 5
+        lowerBG = false
+
     } else {
         stroke950 = 1
     }
 
-    if (mouseX < 45 || mouseX > 55 && mouseX < 95) {
+    if (mouseX < 45 || mouseX > 55 && mouseX < 95 || mouseX > 105 && mouseX < 145 || mouseX > 155 && mouseX < 195 || mouseX > 205 && mouseX < 245 || mouseX > 255 && mouseX < 295 || mouseX > 305 && mouseX < 345 || mouseX > 355 && mouseX < 395 || mouseX > 405 && mouseX < 445 || mouseX > 455 && mouseX < 495 || mouseX > 505 && mouseX < 545 || mouseX > 555 && mouseX < 595 || mouseX > 605 && mouseX < 645 || mouseX > 655 && mouseX < 695 || mouseX > 705 && mouseX < 745 || mouseX > 755 && mouseX < 795 || mouseX > 805 && mouseX < 845 || mouseX > 855 && mouseX < 895 || mouseX > 905 && mouseX < 945 || mouseX > 955) {
         lowerBG = true;
     }
 
