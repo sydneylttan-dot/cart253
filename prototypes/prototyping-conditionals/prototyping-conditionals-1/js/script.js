@@ -54,7 +54,7 @@ function draw() {
 function Obstacles() {
     obst.x = obst.x - 5;
 
-    if (obst.x < 0) {
+    if (obst.x < -50) {
         obst.x = 900;
         obst.y = random(400, 450);
     }
