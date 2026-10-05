@@ -27,7 +27,14 @@ let timer = 0;
 
 let jumping = false;
 
+let scoreDown = false;
+
 let score = 0;
+
+let colX;
+let colY;
+
+let gameOver = false;
 
 /**
 */
@@ -48,7 +55,8 @@ function draw() {
     rect(0, 500, 800, 100);
     Obstacles();
 
-    triangle(obst.x, 500, obst.x + 25, obst.y, obst.x + 50, 500);
+    // triangle(obst.x, 500, obst.x + 25, obst.y, obst.x + 50, 500);
+    rect(obst.x, obst.y, obst.w, obst.h);
 
     Player();
 
@@ -57,6 +65,14 @@ function draw() {
     textSize(32);
     fill(40);
     text("Score: " + score, 30, 50);
+
+    colX = obst.x;
+    colY = obst.y;
+
+    stroke(255, 0, 0);
+    line(colX, colY, 0, 0);
+
+    GameOver();
 }
 
 function Obstacles() {
@@ -66,7 +82,23 @@ function Obstacles() {
         obst.x = 900;
         obst.y = random(400, 450);
         obst.round++;
-        score++;
+
+        if (gameOver === false) {
+            score++;
+        }
+
+        // if (scoreDown === true) {
+        //     score--;
+        //     scoreDown = false;
+        // } else {
+        //     score++;
+        // }
+    }
+
+    if (player.y + player.h > colY && player.x < colX && player.x + player.w > colX) {
+        circle(100, 200, 299)
+        // scoreDown = true;
+        gameOver = true;
     }
 }
 
@@ -114,3 +146,19 @@ function keyPressed() {
     //     player.y = 0;
     // }
 }
+
+function GameOver() {
+
+    if (gameOver === true) {
+        noStroke();
+        fill(40);
+        rect(0, 0, 800, 600);
+        textSize(64);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("GAME OVER", width / 2, height / 2);
+        textSize(32);
+        text("Score: " + score, width / 2, height / 2 + 100);
+    }
+
+} 
