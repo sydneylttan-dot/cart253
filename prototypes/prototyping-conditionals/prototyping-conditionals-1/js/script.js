@@ -18,7 +18,7 @@ let player = {
     y: 450,
     w: 50,
     h: 50,
-    gravity: 0.4
+    gravity: 1
 }
 
 let timer = 0;
@@ -63,21 +63,21 @@ function Obstacles() {
 function Player() {
     rect(player.x, player.y, player.w, player.h);
 
-    if (keyIsDown(UP_ARROW) === true) {
-        player.y = player.y - 5 * player.gravity;
-        jumping = true;
-    } else {
-        player.y += 4 * player.gravity;
-    }
+    // if (keyIsDown(UP_ARROW) === true) {
+    //     player.y = player.y - 5 * player.gravity;
+    //     jumping = true;
+    // } else {
+    //     player.y += 4 * player.gravity;
+    // }
 
-    if (timer > 20 && jumping === true) {
-        player.y += 4 * player.gravity;
-    }
+    // if (timer > 20 && jumping === true) {
+    //     player.y += 4 * player.gravity;
+    // }
 
-    if (player.y == 450) {
-        timer = 0;
-        jumping = false;
-    }
+    // if (player.y == 450) {
+    //     timer = 0;
+    //     jumping = false;
+    // }
 }
 
 function keyPressed() {
@@ -87,6 +87,13 @@ function keyPressed() {
     //     } else {
     //         player.y += 5;
     //     }
+
+    if (keyIsPressed && key === ' ' && player.y === 450) {
+        player.y = player.y - 200 * player.gravity;
+    } else {
+        player.y += 4 * player.gravity;
+    }
+
 
     if (player.y > 450) {
         player.y = 450;
