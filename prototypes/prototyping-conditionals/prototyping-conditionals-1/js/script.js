@@ -20,7 +20,9 @@ let player = {
     y: 450,
     w: 50,
     h: 50,
-    gravity: 1
+    gravity: 1,
+    jump: 15,
+    v: 0
 }
 
 let timer = 0;
@@ -69,10 +71,13 @@ function draw() {
     colX = obst.x;
     colY = obst.y;
 
+
+    //temp line to see where colX and colY are
     stroke(255, 0, 0);
     line(colX, colY, 0, 0);
+    line(player.x, player.y, 0, 0);
 
-    GameOver();
+    // GameOver();
 }
 
 function Obstacles() {
@@ -96,7 +101,10 @@ function Obstacles() {
     }
 
     if (player.y + player.h > colY && player.x < colX && player.x + player.w > colX) {
-        circle(100, 200, 299)
+
+        //temp circle to see if collision worked
+        // circle(100, 200, 299)
+
         // scoreDown = true;
         gameOver = true;
     }
@@ -106,8 +114,8 @@ function Player() {
     rect(player.x, player.y, player.w, player.h);
 
     //Player stays on the ground
-    if (player.y > 450) {
-        player.y = 450;
+    if (player.y + player.h > 450) {
+        player.y = 450 - player.h;
     }
 
     // if (keyIsDown(UP_ARROW) === true) {
@@ -135,11 +143,20 @@ function keyPressed() {
     //         player.y += 5;
     //     }
 
+    player.y += player.v;
+
     if (keyIsPressed && key === ' ' && player.y === 450) {
-        player.y = player.y - 100;
-    } else {
-        player.y += 4 * player.gravity;
+        // player.y = player.y - 100;
+        player.v = -player.jump;
     }
+
+    if (player.y < 450) {
+        player.v += player.gravity;
+    }
+
+    // else {
+    //     // player.y += 4 * player.gravity;
+    // }
 
     //Ceiling limit during testing
     // if (player.y < 0) {
