@@ -17,8 +17,13 @@ let player = {
     x: 200,
     y: 450,
     w: 50,
-    h: 50
+    h: 50,
+    gravity: 0.4
 }
+
+let timer = 0;
+
+let jumping = false;
 
 /**
 */
@@ -59,9 +64,19 @@ function Player() {
     rect(player.x, player.y, player.w, player.h);
 
     if (keyIsDown(UP_ARROW) === true) {
-        player.y = player.y - 5;
+        player.y = player.y - 5 * player.gravity;
+        jumping = true;
     } else {
-        player.y += 5;
+        player.y += 4 * player.gravity;
+    }
+
+    if (timer > 20 && jumping === true) {
+        player.y += 4 * player.gravity;
+    }
+
+    if (player.y == 450) {
+        timer = 0;
+        jumping = false;
     }
 }
 
