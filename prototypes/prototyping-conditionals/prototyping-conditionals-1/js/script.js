@@ -11,7 +11,7 @@ let obst = {
     y: 450,
     w: 50,
     h: 300,
-    spd: -0.5,
+    spd: -0.3,
     round: 0
 }
 
@@ -26,6 +26,8 @@ let player = {
 let timer = 0;
 
 let jumping = false;
+
+let score = 0;
 
 /**
 */
@@ -51,6 +53,10 @@ function draw() {
     Player();
 
     keyPressed();
+
+    textSize(32);
+    fill(40);
+    text("Score: " + score, 30, 50);
 }
 
 function Obstacles() {
@@ -60,6 +66,7 @@ function Obstacles() {
         obst.x = 900;
         obst.y = random(400, 450);
         obst.round++;
+        score++;
     }
 }
 
