@@ -10,7 +10,9 @@ let obst = {
     x: 900,
     y: 450,
     w: 50,
-    h: 300
+    h: 300,
+    spd: -0.5,
+    round: 0
 }
 
 let player = {
@@ -52,16 +54,22 @@ function draw() {
 }
 
 function Obstacles() {
-    obst.x = obst.x - 5;
+    obst.x = obst.x - 5 + obst.spd * obst.round;
 
     if (obst.x < -50) {
         obst.x = 900;
         obst.y = random(400, 450);
+        obst.round++;
     }
 }
 
 function Player() {
     rect(player.x, player.y, player.w, player.h);
+
+    //Player stays on the ground
+    if (player.y > 450) {
+        player.y = 450;
+    }
 
     // if (keyIsDown(UP_ARROW) === true) {
     //     player.y = player.y - 5 * player.gravity;
@@ -89,17 +97,13 @@ function keyPressed() {
     //     }
 
     if (keyIsPressed && key === ' ' && player.y === 450) {
-        player.y = player.y - 200 * player.gravity;
+        player.y = player.y - 100;
     } else {
         player.y += 4 * player.gravity;
     }
 
-
-    if (player.y > 450) {
-        player.y = 450;
-    }
-
-    if (player.y < 0) {
-        player.y = 0;
-    }
+    //Ceiling limit during testing
+    // if (player.y < 0) {
+    //     player.y = 0;
+    // }
 }
