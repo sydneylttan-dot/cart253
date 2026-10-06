@@ -11,6 +11,7 @@ A meter that increases the more keys are typed in succession
 let bar = {
     y: 1000
 }
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -31,5 +32,27 @@ function draw() {
     noStroke()
     rect(0, 1000, 100, bar.y)
 
-    bar.y = mouseY
+    // bar.y = mouseY
+
+    //limit the bar's y
+    if (bar.y > 1000) {
+        bar.y = 1000
+    }
+
+    if (bar.y < 0) {
+        bar.y = 0
+        ChillOut()
+    }
+
+    //slowly decrease the bar
+    bar.y += 0.5
+
+}
+
+function keyPressed() {
+    bar.y -= 5
+}
+
+function ChillOut() {
+
 }
