@@ -11,7 +11,7 @@ Assignment 4 of CART 253. Here are my 3 prototypes for the prototyping condition
 PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play: [![PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play](../../images/TWWAYISWTP.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-1/)
 
 
-PROTOTYPE 2: Bubbles: [![Prototype 2: Bubbles](../../images/bubbles.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-2/)
+PROTOTYPE 2: Colour Mixing: [![Prototype 2: Colour Mixing](../../images/colourmixing.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-2/)
 
 
 PROTOTYPE 3: Harp of Colours: [![Prototype 3: Harp of Colours](../../images/harpofcolours.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-3/)

@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Prototyping Conditions 3 : Rage Meter
+ * Sydney Tan
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+A meter that increases the more keys are typed in succession
  */
 
 "use strict";
@@ -12,6 +11,7 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
+    createCanvas(100, 1000)
 
 }
 
@@ -20,5 +20,5 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-
+    background(205)
 }
