@@ -57,6 +57,8 @@ function draw() {
     rect(0, 500, 800, 100);
     Obstacles();
 
+
+    //drawing the obstacle 
     // triangle(obst.x, 500, obst.x + 25, obst.y, obst.x + 50, 500);
     rect(obst.x, obst.y, obst.w, obst.h);
 
@@ -64,25 +66,30 @@ function draw() {
 
     keyPressed();
 
+    //score text
     textSize(32);
     fill(40);
     text("Score: " + score, 30, 50);
 
+    //making the collision hitbox the same as the obstacle hitbox
     colX = obst.x;
     colY = obst.y;
 
 
-    //temp line to see where colX and colY are
+    //temp lines to see where colX / colY and player x / y are
     stroke(255, 0, 0);
-    line(colX, colY, 0, 0);
-    line(player.x, player.y, 0, 0);
+    // line(colX, colY, 0, 0);
+    // line(player.x, player.y + player.h, 0, 0);
 
-    // GameOver();
+    GameOver();
+
+    // print(player.v)
 }
 
 function Obstacles() {
     obst.x = obst.x - 5 + obst.spd * obst.round;
 
+    // 
     if (obst.x < -50) {
         obst.x = 900;
         obst.y = random(400, 450);
@@ -135,6 +142,7 @@ function Player() {
     // }
 }
 
+//functio
 function keyPressed() {
     //     if (keyCode === 32) {
     //         player.y = player.y - 5;
@@ -164,6 +172,8 @@ function keyPressed() {
     // }
 }
 
+
+//function that displays the game over screen
 function GameOver() {
 
     if (gameOver === true) {
