@@ -1,6 +1,13 @@
 /**
- * Prototyping Conditionals 1
+ * Prototyping Conditionals 1 : 
  * Sydney Tan
+
+
+A project based on Geometry Dash and the no wifi dinosaur game. 
+Press space bar to jump over the obstacles.
+The obstacles will gradually increase in speed as the rounds increase.
+If you hit an obstacle, the game will end and your score will appear.
+
 
  */
 
