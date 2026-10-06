@@ -1,5 +1,5 @@
 /**
- * Prototyping Conditionals 1 : 
+ * Prototyping Conditionals 1 : The Wifi Works and Yet I Still Want to Play
  * Sydney Tan
 
 

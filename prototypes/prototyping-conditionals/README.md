@@ -8,7 +8,7 @@ Sydney Tan
 
 Assignment 4 of CART 253. Here are my 3 prototypes for the prototyping conditionals assignment.
 
-PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play: [![PROTOTYPE 1: The Passing of Seasons](../../images/TWWAYISWTP.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-1/)
+PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play: [![PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play](../../images/TWWAYISWTP.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-1/)
 
 
 PROTOTYPE 2: Bubbles: [![Prototype 2: Bubbles](../../images/bubbles.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-2/)
