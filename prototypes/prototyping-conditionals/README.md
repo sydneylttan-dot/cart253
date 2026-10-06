@@ -14,9 +14,9 @@ PROTOTYPE 1: The Wifi Works and Yet I Still Want to Play: [![PROTOTYPE 1: The Wi
 PROTOTYPE 2: Colour Mixing: [![Prototype 2: Colour Mixing](../../images/colourmixing.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-2/)
 
 
-PROTOTYPE 3: Harp of Colours: [![Prototype 3: Harp of Colours](../../images/harpofcolours.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-variables/prototyping-variables-3/)
+PROTOTYPE 3: Rage Meter: [![Prototype 3: Rage Meter](../../images/ragemeter.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/prototyping-conditionals-3/)
 
-[Reflective Journal: Entry #3](https://sydneylttan-dot.github.io/cart253/journal#entry-3)
+[Reflective Journal: Entry #4](https://sydneylttan-dot.github.io/cart253/journal#entry-4)
 
 ## Attribution
 
