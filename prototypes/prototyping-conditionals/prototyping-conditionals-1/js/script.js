@@ -6,6 +6,10 @@
 
 "use strict";
 
+
+//VARIABLES 
+
+//obstacle
 let obst = {
     x: 900,
     y: 450,
@@ -15,6 +19,7 @@ let obst = {
     round: 0
 }
 
+//player
 let player = {
     x: 200,
     y: 450,
@@ -25,20 +30,26 @@ let player = {
     v: 0
 }
 
-let timer = 0;
+//2 variables used in a previous version of the player jump. did not work
+// let timer = 0;
+// let jumping = false;
 
-let jumping = false;
+//variable that was suppose to deduct score when the player hits an obstacle
+//realized there was no need to deduct score so it isnt used anymore
+// let scoreDown = false;
 
-let scoreDown = false;
-
+//sets the score to 0 at the start of the game
 let score = 0;
 
+//collision variables
 let colX;
 let colY;
 
+//bool that activates the game over screen when the player hits an obstacle
 let gameOver = false;
 
 /**
+ * creates the canvas
 */
 function setup() {
     createCanvas(800, 600);
@@ -51,12 +62,12 @@ function setup() {
 function draw() {
     background(200);
 
-
+    //ground
     noStroke();
     fill(40)
     rect(0, 500, 800, 100);
-    Obstacles();
 
+    Obstacles();
 
     //drawing the obstacle 
     // triangle(obst.x, 500, obst.x + 25, obst.y, obst.x + 50, 500);
@@ -87,14 +98,18 @@ function draw() {
 }
 
 function Obstacles() {
+
+    //the obstacle's speed is gradually increased as the number of rounds increases
     obst.x = obst.x - 5 + obst.spd * obst.round;
 
-    // 
+    // resets the obstacle's position to the right of the screen when it goes off the screen on the left
+    // increases the round counter by 1 (round counter increases the speed of the obstacles and the score)
     if (obst.x < -50) {
         obst.x = 900;
         obst.y = random(400, 450);
         obst.round++;
 
+        //if theres no need for the game over screen, +1 score
         if (gameOver === false) {
             score++;
         }
@@ -107,6 +122,7 @@ function Obstacles() {
         // }
     }
 
+    //detects when the player hits an obstacle. when it does, activate the game over screen
     if (player.y + player.h > colY && player.x < colX && player.x + player.w > colX) {
 
         //temp circle to see if collision worked
@@ -117,6 +133,8 @@ function Obstacles() {
     }
 }
 
+
+//drawing the cube (player) and making it stay on the ground
 function Player() {
     rect(player.x, player.y, player.w, player.h);
 
