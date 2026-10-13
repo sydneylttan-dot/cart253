@@ -17,6 +17,10 @@ let dReady = false;
 let aReady = false;
 let yReady = false;
 
+let dayTime = true;
+let nightTime = false;
+let standby = false;
+
 /**
 */
 function setup() {
@@ -35,6 +39,10 @@ function draw() {
     //checking the bool status
     // print(tReady)
     // print(yReady)
+    // print(nReady)
+
+    textDisplay()
+    reset()
 
 }
 
@@ -45,7 +53,6 @@ function keyTyped() {
     // when night is typed, the lanscape changes to night
     if (key === 'n') {
         nReady = true;
-        text("")
     }
 
     if (key === 'i' && nReady === true) {
@@ -62,6 +69,7 @@ function keyTyped() {
 
     if (key === 't' && hReady === true) {
         tReady = true
+        standby = true
     }
 
     //-----------------------------------------------------------------------------------//
@@ -78,8 +86,59 @@ function keyTyped() {
 
     if (key === 'y' && aReady === true) {
         yReady = true;
+        standby = true
     }
 
+}
+
+function textDisplay() {
+
+    fill(20)
+    circle(950, 490, 300)
+
+    fill(255)
+    textSize(50)
+    textAlign(RIGHT)
+
+    if (dayTime === true && nightTime === false) {
+        if (tReady === true) {
+            text('night', 970, 470)
+        } else if (hReady === true) {
+            text('nigh', 970, 470)
+        } else if (gReady === true) {
+            text('nig', 970, 470)
+        } else if (iReady === true) {
+            text('ni', 970, 470)
+        } else if (nReady === true) {
+            text('n', 970, 470)
+        }
+
+    }
+
+    if (nightTime === true && dayTime === false) {
+        if (yReady === true) {
+            text('day', 970, 470)
+        } else if (aReady === true) {
+            text('da', 970, 470)
+        } else if (dReady === true) {
+            text('d', 970, 870)
+        }
+    }
+
+
+
+}
+
+function reset() {
+    if (dayTime === true) {
+        nReady, iReady, gReady, hReady, tReady = false
+    }
+
+    if (nightTime === true) {
+        dReady, aReady, yReady = false
+    }
+
+    print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
 }
 
 
