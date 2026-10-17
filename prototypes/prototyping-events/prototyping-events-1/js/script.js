@@ -3,7 +3,8 @@
  * Sydney Tan
  * 
     landscape: if "night" is written, the landscape will change to night, if "day" is written, the landscape will change to day
- */
+    when ENTER is typed, 
+    */
 
 "use strict";
 
@@ -19,7 +20,12 @@ let yReady = false;
 
 let dayTime = true;
 let nightTime = false;
-let standby = false;
+// let standby = false;
+
+let waitingForNight = false
+let waitingForDay = false
+
+let isTyping = false;
 
 /**
 */
@@ -51,42 +57,69 @@ function keyTyped() {
 
     // TYPING NIGHT
     // when night is typed, the lanscape changes to night
-    if (key === 'n') {
-        nReady = true;
-    }
 
-    if (key === 'i' && nReady === true) {
-        iReady = true
-    }
+    if (isTyping === true && waitingForNight === true) {
+        if (key === 'n') {
+            nReady = true;
+        }
 
-    if (key === 'g' && iReady === true) {
-        gReady = true
-    }
+        if (key === 'i' && nReady === true) {
+            iReady = true
+        }
 
-    if (key === 'h' && gReady === true) {
-        hReady = true
-    }
+        if (key === 'g' && iReady === true) {
+            gReady = true
+        }
 
-    if (key === 't' && hReady === true) {
-        tReady = true
-        standby = true
+        if (key === 'h' && gReady === true) {
+            hReady = true
+        }
+
+        if (key === 't' && hReady === true) {
+            tReady = true
+            // standby = true
+            isTyping = false;
+            // waitingForNight = false
+        }
     }
 
     //-----------------------------------------------------------------------------------//
 
     // TYPING DAY
     // when day is typed, the landscape changes to day
-    if (key === 'd') {
-        dReady = true;
+    if (isTyping === true) {
+        if (key === 'd') {
+            dReady = true;
+        }
+
+        if (key === 'a' && dReady === true) {
+            aReady = true;
+        }
+
+        if (key === 'y' && aReady === true) {
+            yReady = true;
+            // standby = true
+        }
     }
 
-    if (key === 'a' && dReady === true) {
-        aReady = true;
-    }
+    //-----------------------------------------------------------------------------------//
 
-    if (key === 'y' && aReady === true) {
-        yReady = true;
-        standby = true
+    //CHANGING TIME
+    // when ENTER is typed, the time of day can be changed
+    if (keyCode === 13) {
+        // print('aaaaaaa');
+        isTyping = true;
+
+        if (dayTime === true && nightTime === false) {
+            waitingForNight = true
+            // dayTime = false
+        }
+
+        if (dayTime === false && nightTime === true) {
+            waitingForDay = true
+            // nightTime = false
+        }
+
     }
 
 }
@@ -125,20 +158,22 @@ function textDisplay() {
         }
     }
 
-
-
 }
 
 function reset() {
     if (dayTime === true) {
         nReady, iReady, gReady, hReady, tReady = false
+        // dayTime = false;
     }
 
     if (nightTime === true) {
         dReady, aReady, yReady = false
+        // nightTime = false
     }
 
-    print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
+    // print(dayTime, nightTime)
+    print(waitingForNight)
+    // print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
 }
 
 
