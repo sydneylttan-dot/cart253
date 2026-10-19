@@ -1,38 +1,60 @@
 /**
- * Protyping Events 1: 
+ * Protyping Events 1: Time of Day
  * Sydney Tan
  * 
+ * A prototype where the time of day changes when night or day is typed
+ * 
+ * Controls: 
+ * ENTER: enables night/day to be typed
+ * keyboard: type "night" to change the time of day to night / type "day" to change the time of day to day
+ * 
+ * 
+ * the concept of the prototype:
     landscape: if "night" is written, the landscape will change to night, if "day" is written, the landscape will change to day
     when ENTER is typed, 
+
+* Uses:
+ * p5.js
+ * https://p5js.org
     */
 
 "use strict";
 
+//VARIABLES
+
+//variables to check when a specific key is pressed
+//for night
 let nReady = false;
 let iReady = false;
 let gReady = false;
 let hReady = false;
 let tReady = false;
 
+//for day
 let dReady = false;
 let aReady = false;
 let yReady = false;
 
+//variables to set the time of day for the bg changes
 let dayTime = true;
 let nightTime = false;
 // let standby = false;
 
+//variables for the states in between day and night to check which keys can be pressed
 let waitingForNight = false;
 let waitingForDay = false;
 
+//check if a word is in the process of getting typed, becomes true when ENTER is typed
 let isTyping = false;
 
+//variables to change the bg colour
 let bgColour = {
     r: 40,
     g: 40,
     b: 40
 }
 
+//variables to change the alpha of the text (to make it visible/invisble) and the circle that changes the sun into a moon
 let alpha = {
     moon: 0,
     nightText: 0,
@@ -40,6 +62,7 @@ let alpha = {
 }
 
 /**
+ * create canvas
 */
 function setup() {
     createCanvas(1000, 500);
@@ -47,6 +70,7 @@ function setup() {
 
 
 /**
+ * creating a bg with variables as colours and calling functions
 */
 function draw() {
     background(bgColour.r, bgColour.g, bgColour.b);
@@ -67,6 +91,8 @@ function draw() {
 }
 
 //i tried using keyIsPressed before but it wouldn't work well with the ready bools so I changed it to a keyTyped function
+//the function that checks which keys are typed and activates the according bools
+//activates when the letters that make up "night" and "day" are typed as well as the ENTER key
 function keyTyped() {
 
     // TYPING NIGHT
@@ -125,7 +151,7 @@ function keyTyped() {
     //-----------------------------------------------------------------------------------//
 
     //CHANGING TIME
-    // when ENTER is typed, the time of day can be changed
+    // when ENTER is typed, the letters for day/night can be typed depending on the current time of day
     if (keyCode === 13) {
         // print('aaaaaaa');
         isTyping = true;
@@ -144,15 +170,20 @@ function keyTyped() {
 
 }
 
+//function that displays the circle and text at the bottom right of the canvas
 function textDisplay() {
 
+    //the circle at the bottom right
     fill(20)
     circle(950, 490, 300)
 
+    //set the text to white, make its alpha a variable so that it can be changed later, aligned to the right
     fill(255, 255, 255, alpha.nightText)
     textSize(50)
     textAlign(RIGHT)
 
+    //displays the text for night
+    //the if/else if go from the last state to the first, tried doing it the ther way, it didnt work too well
     // if (dayTime === true && nightTime === false) {
     if (tReady === true) {
         text('night', 970, 470)
@@ -167,6 +198,10 @@ function textDisplay() {
     }
 
     // }
+
+    //-----------------------------------------------------------------------------------//
+
+    //same thing as what happens for night
 
     fill(255, 255, 255, alpha.dayText)
     textSize(50)
@@ -185,6 +220,7 @@ function textDisplay() {
 
 }
 
+//function that sets bools back to false and alphas back to invisible/visible when the time of day changes
 function reset() {
     if (waitingForDay === true) {
         nReady = false
@@ -214,11 +250,12 @@ function reset() {
 
     // print(dayTime, nightTime)
     // print(waitingForNight, waitingForDay)
-    print(alpha.dayText)
+    // print(alpha.dayText)
     // print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
     // print(hReady, tReady, dayTime, nightTime)
 }
 
+//function that draws the bg elements (hill, house, sun/moon)
 function bg() {
 
     fill(60)
@@ -236,6 +273,7 @@ function bg() {
 
 }
 
+//funtion that changes how the bg looks (the bg colour switch and the alpha of the circle that turns the circle ont he top left from a sun to a moon and the moon to a sun)
 function bgChange() {
 
     if (dayTime === true) {
