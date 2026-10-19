@@ -178,7 +178,8 @@ function textDisplay() {
     } else if (aReady === true) {
         text('da', 970, 470)
     } else if (dReady === true) {
-        text('d', 970, 870)
+        text('d', 970, 470)
+        // print('weh')
     }
     // }
 
