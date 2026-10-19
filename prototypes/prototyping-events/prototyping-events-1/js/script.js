@@ -22,10 +22,22 @@ let dayTime = true;
 let nightTime = false;
 // let standby = false;
 
-let waitingForNight = false
-let waitingForDay = false
+let waitingForNight = false;
+let waitingForDay = false;
 
 let isTyping = false;
+
+let bgColour = {
+    r: 40,
+    g: 40,
+    b: 40
+}
+
+let alpha = {
+    moon: 0,
+    nightText: 0,
+    dayText: 0
+}
 
 /**
 */
@@ -37,7 +49,7 @@ function setup() {
 /**
 */
 function draw() {
-    background(40);
+    background(bgColour.r, bgColour.g, bgColour.b);
 
     //failed attempt at a keyboard typing detector
     // nightTrigger()
@@ -47,6 +59,8 @@ function draw() {
     // print(yReady)
     // print(nReady)
 
+    bgChange()
+    bg()
     textDisplay()
     reset()
 
@@ -79,7 +93,9 @@ function keyTyped() {
             tReady = true
             // standby = true
             isTyping = false;
-            // waitingForNight = false
+            waitingForNight = false
+            dayTime = false;
+            nightTime = true;
         }
     }
 
@@ -98,6 +114,10 @@ function keyTyped() {
 
         if (key === 'y' && aReady === true) {
             yReady = true;
+            isTyping = false;
+            nightTime = false;
+            dayTime = true
+            waitingForDay = false
             // standby = true
         }
     }
@@ -129,34 +149,42 @@ function textDisplay() {
     fill(20)
     circle(950, 490, 300)
 
-    fill(255)
+    fill(255, 255, 255, alpha.nightText)
     textSize(50)
     textAlign(RIGHT)
 
-    if (dayTime === true && nightTime === false) {
-        if (tReady === true) {
-            text('night', 970, 470)
-        } else if (hReady === true) {
-            text('nigh', 970, 470)
-        } else if (gReady === true) {
-            text('nig', 970, 470)
-        } else if (iReady === true) {
-            text('ni', 970, 470)
-        } else if (nReady === true) {
-            text('n', 970, 470)
-        }
-
+    // if (dayTime === true && nightTime === false) {
+    if (tReady === true) {
+        text('night', 970, 470)
+    } else if (hReady === true) {
+        text('nigh', 970, 470)
+    } else if (gReady === true) {
+        text('nig', 970, 470)
+    } else if (iReady === true) {
+        text('ni', 970, 470)
+    } else if (nReady === true) {
+        // fill(20)
+        // circle(950, 490, 300)
+        text('n', 970, 470)
     }
 
-    if (nightTime === true && dayTime === false) {
-        if (yReady === true) {
-            text('day', 970, 470)
-        } else if (aReady === true) {
-            text('da', 970, 470)
-        } else if (dReady === true) {
-            text('d', 970, 870)
-        }
+    // }
+
+    fill(255, 255, 255, alpha.dayText)
+    textSize(50)
+    textAlign(RIGHT)
+
+    // if (nightTime === true && dayTime === false) {
+    if (yReady === true) {
+        text('day', 970, 470)
+    } else if (aReady === true) {
+        text('da', 970, 470)
+    } else if (dReady === true) {
+        // fill(20)
+        // circle(950, 490, 300)
+        text('d', 970, 870)
     }
+    // }
 
 }
 
@@ -172,8 +200,44 @@ function reset() {
     }
 
     // print(dayTime, nightTime)
-    print(waitingForNight)
+    print(waitingForNight, waitingForDay)
     // print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
+    // print(hReady, tReady, dayTime, nightTime)
+}
+
+function bg() {
+
+    fill(60)
+    noStroke()
+    ellipse(width / 2, 500, 1500, 300)
+
+    rect(250, 270, 100, 100)
+    triangle(225, 290, 300, 230, 375, 290)
+
+    fill(255)
+    circle(100, 100, 50)
+
+    fill(40, 40, 40, alpha.moon)
+    circle(110, 90, 40)
+
+}
+
+function bgChange() {
+
+    if (dayTime === true) {
+        bgColour.r = 200
+        bgColour.g = 230
+        bgColour.b = 255
+        alpha.moon = 0
+    }
+
+    if (nightTime === true) {
+        bgColour.r = 40
+        bgColour.g = 40
+        bgColour.b = 40
+        alpha.moon = 255
+    }
+
 }
 
 
