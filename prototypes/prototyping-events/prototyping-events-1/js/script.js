@@ -103,7 +103,7 @@ function keyTyped() {
 
     // TYPING DAY
     // when day is typed, the landscape changes to day
-    if (isTyping === true) {
+    if (isTyping === true && waitingForDay === true) {
         if (key === 'd') {
             dReady = true;
         }
@@ -163,8 +163,6 @@ function textDisplay() {
     } else if (iReady === true) {
         text('ni', 970, 470)
     } else if (nReady === true) {
-        // fill(20)
-        // circle(950, 490, 300)
         text('n', 970, 470)
     }
 
@@ -180,8 +178,6 @@ function textDisplay() {
     } else if (aReady === true) {
         text('da', 970, 470)
     } else if (dReady === true) {
-        // fill(20)
-        // circle(950, 490, 300)
         text('d', 970, 870)
     }
     // }
@@ -189,18 +185,35 @@ function textDisplay() {
 }
 
 function reset() {
-    if (dayTime === true) {
-        nReady, iReady, gReady, hReady, tReady = false
+    if (waitingForDay === true) {
+        nReady = false
+        iReady = false
+        gReady = false
+        hReady = false
+        tReady = false
         // dayTime = false;
     }
 
-    if (nightTime === true) {
-        dReady, aReady, yReady = false
+    if (waitingForNight === true) {
+        dReady = false
+        aReady = false
+        yReady = false
         // nightTime = false
     }
 
+    if (waitingForDay === true) {
+        alpha.dayText = 255
+        alpha.nightText = 0
+    }
+
+    if (waitingForNight === true) {
+        alpha.nightText = 255
+        alpha.dayText = 0
+    }
+
     // print(dayTime, nightTime)
-    print(waitingForNight, waitingForDay)
+    // print(waitingForNight, waitingForDay)
+    print(alpha.dayText)
     // print(nReady, iReady, gReady, hReady, tReady, dReady, aReady, yReady)
     // print(hReady, tReady, dayTime, nightTime)
 }
