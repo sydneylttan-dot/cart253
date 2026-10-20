@@ -4,19 +4,26 @@ Sydney Tan
 
 [View this project online](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events)
 
+## Journal Entry: 
+
+[Reflective Journal: Entry #5](https://sydneylttan-dot.github.io/cart253/journal#entry-5)
+
 ## Description
 
 Assignment 5 of CART 253. Here are my 3 prototypes for the instructions prototype assignment.
 
 PROTOTYPE 1: Time of Day: [![PROTOTYPE 1: Time of Day](../../images/timeofday.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-1/)
 
+[View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-events/prototyping-events-1/js/script.js)
+
 
 PROTOTYPE 2: Morning Routine: [![Prototype 2: Morning Routine](../../images/morningroutine.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-2/)
 
+[View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-events/prototyping-events-2/js/script.js)
 
 PROTOTYPE 3: Daily Life: [![Prototype 3: Daily Life](../../images/dailylife.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-3/)
 
-[Reflective Journal: Entry #5](https://sydneylttan-dot.github.io/cart253/journal#entry-5)
+[View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-events/prototyping-events-3/js/script.js)
 
 ## Attribution
 
