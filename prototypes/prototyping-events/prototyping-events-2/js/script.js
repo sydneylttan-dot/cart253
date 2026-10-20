@@ -1,5 +1,5 @@
 /**
- * Prototyping Events 2:
+ * Prototyping Events 2: Morning Routine
  * Sydney Tan
  * 
  * Curtains that go up/down when the mouse wheel is scrolled
