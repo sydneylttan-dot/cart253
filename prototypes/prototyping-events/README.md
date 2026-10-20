@@ -14,9 +14,9 @@ PROTOTYPE 1: Time of Day: [![PROTOTYPE 1: Time of Day](../../images/timeofday.pn
 PROTOTYPE 2: Morning Routine: [![Prototype 2: Morning Routine](../../images/morningroutine.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-2/)
 
 
-PROTOTYPE 3: [![Prototype 3: ]()](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-3/)
+PROTOTYPE 3: Daily Life: [![Prototype 3: Daily Life](../../images/dailylife.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-3/)
 
-[Reflective Journal: Entry #2](https://sydneylttan-dot.github.io/cart253/journal#entry-2)
+[Reflective Journal: Entry #5](https://sydneylttan-dot.github.io/cart253/journal#entry-5)
 
 ## Attribution
 
