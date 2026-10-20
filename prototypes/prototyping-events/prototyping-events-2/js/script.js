@@ -102,7 +102,7 @@ function curtains() {
 
         curtainLvl = 0
 
-
+        curtainLines.y = 80
     }
 
     if (curtainLvl === 1) {
@@ -114,6 +114,8 @@ function curtains() {
         curtainsAlpha.a6 = 0
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 120
     }
 
     if (curtainLvl === 2) {
@@ -125,6 +127,8 @@ function curtains() {
         curtainsAlpha.a6 = 0
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 160
     }
 
     if (curtainLvl === 3) {
@@ -136,6 +140,8 @@ function curtains() {
         curtainsAlpha.a6 = 0
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 200
     }
 
     if (curtainLvl === 4) {
@@ -147,6 +153,8 @@ function curtains() {
         curtainsAlpha.a6 = 0
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 240
     }
 
     if (curtainLvl === 5) {
@@ -158,6 +166,8 @@ function curtains() {
         curtainsAlpha.a6 = 0
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 280
     }
 
     if (curtainLvl === 6) {
@@ -169,6 +179,8 @@ function curtains() {
         curtainsAlpha.a6 = 255
         curtainsAlpha.a7 = 0
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 320
     }
 
     if (curtainLvl === 7) {
@@ -180,6 +192,8 @@ function curtains() {
         curtainsAlpha.a6 = 255
         curtainsAlpha.a7 = 255
         curtainsAlpha.a8 = 0
+
+        curtainLines.y = 360
     }
 
     if (curtainLvl >= 8) {
@@ -193,6 +207,8 @@ function curtains() {
         curtainsAlpha.a8 = 255
 
         curtainLvl = 8
+
+        curtainLines.y = 400
     }
 }
 
