@@ -1,24 +1,207 @@
 /**
- * Title of Project
- * Author Name
+ * Prototyping Events 2:
+ * Sydney Tan
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Curtains that go up/down when the mouse wheel is scrolled
+ * 
  */
 
 "use strict";
 
+
+let curtainsAlpha = {
+    a1: 255,
+    a2: 255,
+    a3: 255,
+    a4: 255,
+    a5: 255,
+    a6: 255,
+    a7: 255,
+    a8: 255
+}
+
+let curtainLines = {
+    y: 400
+}
+
+let curtainLvl = 0
+
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-
+    createCanvas(800, 700)
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background(200, 150, 150)
 
+    fill(255)
+    noStroke()
+    quad(0, 700, 800, 700, 600, 500, 200, 500)
+
+    rectMode(CENTER)
+    rect(width / 2, 250, 380, 330)
+
+    fill(255, 220, 220)
+    rect(width / 2, 250, 330, 280)
+
+    curtains()
+
+    print(curtainLvl)
+
+}
+
+function curtains() {
+
+    fill(150, 100, 100)
+    rect(width / 2, 80, 400, 30)
+
+    strokeWeight(5)
+    stroke(150, 100, 100)
+    line(280, 80, 280, curtainLines.y)
+    line(520, 80, 520, curtainLines.y)
+
+    noStroke()
+    fill(180, 130, 130, curtainsAlpha.a1)
+    rect(width / 2, 120, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a2)
+    rect(width / 2, 160, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a3)
+    rect(width / 2, 200, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a4)
+    rect(width / 2, 240, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a5)
+    rect(width / 2, 280, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a6)
+    rect(width / 2, 320, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a7)
+    rect(width / 2, 360, 390, 30)
+
+    fill(180, 130, 130, curtainsAlpha.a8)
+    rect(width / 2, 400, 390, 30)
+
+
+    if (curtainLvl < 0) {
+        curtainsAlpha.a1 = 0
+        curtainsAlpha.a2 = 0
+        curtainsAlpha.a3 = 0
+        curtainsAlpha.a4 = 0
+        curtainsAlpha.a5 = 0
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+
+        curtainLvl = 0
+
+
+    }
+
+    if (curtainLvl === 1) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 0
+        curtainsAlpha.a3 = 0
+        curtainsAlpha.a4 = 0
+        curtainsAlpha.a5 = 0
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 2) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 0
+        curtainsAlpha.a4 = 0
+        curtainsAlpha.a5 = 0
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 3) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 0
+        curtainsAlpha.a5 = 0
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 4) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 255
+        curtainsAlpha.a5 = 0
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 5) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 255
+        curtainsAlpha.a5 = 255
+        curtainsAlpha.a6 = 0
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 6) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 255
+        curtainsAlpha.a5 = 255
+        curtainsAlpha.a6 = 255
+        curtainsAlpha.a7 = 0
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl === 7) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 255
+        curtainsAlpha.a5 = 255
+        curtainsAlpha.a6 = 255
+        curtainsAlpha.a7 = 255
+        curtainsAlpha.a8 = 0
+    }
+
+    if (curtainLvl >= 8) {
+        curtainsAlpha.a1 = 255
+        curtainsAlpha.a2 = 255
+        curtainsAlpha.a3 = 255
+        curtainsAlpha.a4 = 255
+        curtainsAlpha.a5 = 255
+        curtainsAlpha.a6 = 255
+        curtainsAlpha.a7 = 255
+        curtainsAlpha.a8 = 255
+
+        curtainLvl = 8
+    }
+}
+
+function mouseWheel(event) {
+    if (event.delta > 0) {
+        curtainLvl++
+    }
+
+    if (event.delta < 0) {
+        curtainLvl--
+    }
 }

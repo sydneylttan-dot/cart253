@@ -11,10 +11,10 @@ Assignment 5 of CART 253. Here are my 3 prototypes for the instructions prototyp
 PROTOTYPE 1: Time of Day: [![PROTOTYPE 1: Time of Day]()](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-1/)
 
 
-PROTOTYPE 2: Beats: [![Prototype 2: Beats](../images/Beats2.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-2/)
+PROTOTYPE 2: : [![Prototype 2: ]()](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-2/)
 
 
-PROTOTYPE 3: Crossroads: [![Prototype 3: Crossroads](../images/Crossroads.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-3/)
+PROTOTYPE 3: : [![Prototype 3: ]()](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/prototyping-events-3/)
 
 [Reflective Journal: Entry #2](https://sydneylttan-dot.github.io/cart253/journal#entry-2)
 
