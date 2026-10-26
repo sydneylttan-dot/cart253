@@ -29,6 +29,9 @@ Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.
 
 [*Prototyping: Conditionals*](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-conditionals/)
 
+[*Prototyping: Events*](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/)
+
+
 
 ## Links
 
