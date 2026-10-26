@@ -1,7 +1,10 @@
 /**
- * Prototyping: Variables 2 : Bubbles
+ * Prototyping: Functions 1 : Better Bubbles
  * Sydney Tan
  * 
+ * Reworked version of one of the prototypes for prototyping variables
+ * 
+ * Previous project description:
  * A project where u watch multicoloured bubbles ascend
  * uses a lot of randoms and variables
  * wouldve probably been better with a shorter canvas
