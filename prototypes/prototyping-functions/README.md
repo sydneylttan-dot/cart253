@@ -12,11 +12,11 @@ Sydney Tan
 
 Assignment 6 of CART 253. Here are my 3 prototypes for the prototyping functions assignment.
 
-PROTOTYPE 1: Time of Day: [![PROTOTYPE 1: Time of Day](../../images/timeofday.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-1/)
+PROTOTYPE 1: Better Bubbles: [![PROTOTYPE 1: Better Bubbles](../../images/timeofday.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-1/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-funtions/prototyping-functions-1/js/script.js)
 
 
-PROTOTYPE 2: Morning Routine: [![Prototype 2: Morning Routine](../../images/morningroutine.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-2/)
+PROTOTYPE 2: Food Chain: [![Prototype 2: Food Chain](../../images/morningroutine.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-2/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-functions/prototyping-functions-2/js/script.js)
 
 PROTOTYPE 3: Daily Life: [![Prototype 3: Daily Life](../../images/dailylife.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-3/)

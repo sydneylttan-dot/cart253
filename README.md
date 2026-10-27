@@ -31,6 +31,7 @@ Project 1: [![Project 1](./images/project1.png)](https://sydneylttan-dot.github.
 
 [*Prototyping: Events*](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-events/)
 
+[*Prototyping: Functions*](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/)
 
 
 ## Links
