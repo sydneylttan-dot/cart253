@@ -1,10 +1,11 @@
 /**
- * Prototyping Functions 2:
+ * Prototyping Functions 2: Food Chain
  * Sydney Tan
  * 
  * Project Idea: 
  *  - Colony of orbs that interact with each other in different ways (kinda like agar.io?)
  * wanted to make a project where u feed a fish instead of this, i'll make that next week with arrays
+ * on second thought, this one would also benefit greatly from arrays
  */
 
 "use strict";
@@ -38,10 +39,35 @@ let sizeMedium = {
     b: 255,
 }
 
+let sizeBig = {
+    x: undefined,
+    y: undefined,
+    size: 70,
+    r: 255,
+    g: 100,
+    b: 255,
+}
+
+let sizeHuge = {
+    x: undefined,
+    y: undefined,
+    size: 100,
+    r: 255,
+    g: 100,
+    b: 100,
+}
+
 let player = {
     x: 500,
     y: 500,
     size: 50
+}
+
+let walls = {
+    right: 1000,
+    left: 0,
+    top: 0,
+    bottom: 1000
 }
 
 /**
@@ -52,6 +78,8 @@ function setup() {
     orbSetup(sizeMini)
     orbSetup(sizeSmall)
     orbSetup(sizeMedium)
+    orbSetup(sizeBig)
+    orbSetup(sizeHuge)
 
 }
 
@@ -62,9 +90,9 @@ function draw() {
 
     noStroke()
 
-    timer++
+    // print(player.size)
 
-    print(timer)
+    timer++
 
     orbDraw(sizeMini)
     orbMove(sizeMini)
@@ -75,11 +103,20 @@ function draw() {
     orbDraw(sizeMedium)
     orbMove(sizeMedium)
 
-    // orbDraw(sizeMini)
-    // orbMove(sizeMini)
+    orbDraw(sizeBig)
+    orbMove(sizeBig)
+
+    orbDraw(sizeHuge)
+    orbMove(sizeHuge)
 
     playerDraw()
     playerMove()
+
+    checkOverlap(player, sizeMini)
+    checkOverlap(player, sizeSmall)
+    checkOverlap(player, sizeMedium)
+    checkOverlap(player, sizeBig)
+    checkOverlap(player, sizeHuge)
 }
 
 function orbDraw(type) {
@@ -96,7 +133,7 @@ function orbMove(type) {
         type.y++
     }
 
-    if (timer > 19) {
+    if (timer > 20) {
         timer = 0
     }
 
@@ -113,6 +150,10 @@ function playerDraw() {
 }
 
 function playerMove() {
+
+    let xc = constrain(player.x, walls.left, walls.right)
+    let yc = constrain(player.y, walls.top, walls.bottom)
+
     if (keyIsDown(LEFT_ARROW)) {
         player.x -= 5
     }
@@ -128,8 +169,26 @@ function playerMove() {
     if (keyIsDown(DOWN_ARROW)) {
         player.y += 5
     }
+    circle(xc, yc, player.size)
 }
 
-function collisionDetect() {
+function checkOverlap(user, target) {
+    const d = dist(user.x, user.y, target.x, target.y)
+    const overlap = (d < user.size / 2 + target.size / 2)
+    if (overlap) {
+        target.x = 2000
+        target.y = 2000
 
+        if (target.size === 10) {
+            user.size += 10
+        } else if (target.size === 30) {
+            user.size += 30
+        } else if (target.size === 50) {
+            user.size += 50
+        } else if (target.size === 70) {
+            user.size += 70
+        } else if (target.size === 100) {
+            user.size += 100
+        }
+    }
 }
