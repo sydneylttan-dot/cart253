@@ -13,7 +13,7 @@ Sydney Tan
 Assignment 6 of CART 253. Here are my 3 prototypes for the prototyping functions assignment.
 
 PROTOTYPE 1: Better Bubbles: [![PROTOTYPE 1: Better Bubbles](../../images/betterbubbles.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-1/)
-[View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-funtions/prototyping-functions-1/js/script.js)
+[View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-functions/prototyping-functions-1/js/script.js)
 
 
 PROTOTYPE 2: Food Chain: [![Prototype 2: Food Chain](../../images/foodchain.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-2/)
