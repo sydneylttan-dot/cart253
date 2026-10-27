@@ -2,6 +2,11 @@
  * Prototyping Functions 2: Food Chain
  * Sydney Tan
  * 
+ * A small prototype where the player grows when eating orbs
+ * 
+ * Controls:
+ * - Arrow keys: player (the white circle) movement
+ * 
  * Project Idea: 
  *  - Colony of orbs that interact with each other in different ways (kinda like agar.io?)
  * wanted to make a project where u feed a fish instead of this, i'll make that next week with arrays
@@ -10,8 +15,15 @@
 
 "use strict";
 
+
+//VARIABLES
+
+//timer for the up/down movement of the orbs
 let timer = 0
 
+//all of the size variables do the same thing so I'll only comment on the first one
+//used by the functions to draw orbs of different sizes
+//variables for x/y position, size, colour
 let sizeMini = {
     x: undefined,
     y: undefined,
@@ -57,12 +69,14 @@ let sizeHuge = {
     b: 100,
 }
 
+//player's variables: sets the initial x/y and size (both of these are changed later in the playerMove and checkOverlap functions)
 let player = {
     x: 500,
     y: 500,
     size: 50
 }
 
+//walls that constrain the player's x and y to the canvas
 let walls = {
     right: 1000,
     left: 0,
@@ -71,6 +85,7 @@ let walls = {
 }
 
 /**
+ * creates the canvas and sets the initial x/y of the orbs
 */
 function setup() {
     createCanvas(1000, 1000)
@@ -84,6 +99,7 @@ function setup() {
 }
 
 /**
+ * draws the bg, calls the functions
 */
 function draw() {
     background(40)
@@ -92,8 +108,10 @@ function draw() {
 
     // print(player.size)
 
+    //increase the timer's count
     timer++
 
+    //for each size of orb, draw the orb and make it move
     orbDraw(sizeMini)
     orbMove(sizeMini)
 
@@ -109,9 +127,10 @@ function draw() {
     orbDraw(sizeHuge)
     orbMove(sizeHuge)
 
-    playerDraw()
+    //calls the function that lets the player move
     playerMove()
 
+    //check if the player overlaps with each of the targets
     checkOverlap(player, sizeMini)
     checkOverlap(player, sizeSmall)
     checkOverlap(player, sizeMedium)
@@ -119,12 +138,14 @@ function draw() {
     checkOverlap(player, sizeHuge)
 }
 
+//function that draws the orbs, type is replaced by the respective size mini/small/medium/big/huge variables in the draw loop
 function orbDraw(type) {
 
     fill(type.r, type.g, type.b)
     circle(type.x, type.y, type.size)
 }
 
+//function that makes the orbs go up and down. like in the orbDraw function, type is replaced by the variables set before setup in the draw loop so that this function can control all of their movements
 function orbMove(type) {
 
     if (timer > 10) {
@@ -133,27 +154,29 @@ function orbMove(type) {
         type.y++
     }
 
+    //when the timer goes above 20, reset it to 0 so that the movement loop above can be restarted
     if (timer > 20) {
         timer = 0
     }
 
 }
 
+//sets the random starting locations of all of the orbs. all of them are different thanks to parameters in draw
 function orbSetup(type) {
     type.x = random(200, 800)
     type.y = random(200, 800)
 }
 
-function playerDraw() {
-    fill(255)
-    circle(player.x, player.y, player.size)
-}
-
+//constrains the player's x/y to the canvas, draws the player, manages the player movements
+//player moves when the arrow keys are pressed
+//the player circle's x and y are the constrained x and y
 function playerMove() {
 
+    //constrains the player to the interior of the walls
     let xc = constrain(player.x, walls.left, walls.right)
     let yc = constrain(player.y, walls.top, walls.bottom)
 
+    //move the player according to the key pressed
     if (keyIsDown(LEFT_ARROW)) {
         player.x -= 5
     }
@@ -169,9 +192,18 @@ function playerMove() {
     if (keyIsDown(DOWN_ARROW)) {
         player.y += 5
     }
+
+    //draws the player with its constrained x/y values
+    fill(255)
     circle(xc, yc, player.size)
 }
 
+//checks if the user (the player) and the target (the orbs) are overlapping
+//the player's size grows according to the size of the orb
+//if and else if statements check if the target is of a specific size. the player's size grows according to the size of the orb it came in contact with
+//i didnt know how to make the orbs disappear when the player came in contact with it (my usual prefered trick of setting the alpha to 0 doesnt work in this scenario because the orb would still be there even if its alpha was 0)
+//so I just moved the orbs off of the canvas when it came in contact with the player since the player can't leave the canvas
+//it may not be the best but it works :)
 function checkOverlap(user, target) {
     const d = dist(user.x, user.y, target.x, target.y)
     const overlap = (d < user.size / 2 + target.size / 2)
