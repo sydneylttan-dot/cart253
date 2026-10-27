@@ -15,7 +15,7 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-
+    createCanvas(800, 700)
 }
 
 
@@ -23,5 +23,15 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background(40)
 
+    drawDoors()
+
+}
+
+function drawDoors() {
+    fill(255)
+    noStroke()
+    rectMode(CORNER)
+    rect(100, 300, 100, 200)
 }
