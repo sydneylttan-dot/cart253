@@ -14,6 +14,10 @@
 
 //VARIABLES
 
+let guest1Image;
+let guest2Image;
+let guest3Image;
+
 let enter = {
     room1: false,
     room2: false,
@@ -24,8 +28,14 @@ let enter = {
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
-function setup() {
+async function setup() {
+
+    guest1Image = await loadImage(('./assets/images/hotelguest1.png'))
+    guest2Image = await loadImage(('./assets/images/hotelguest2.png'))
+    guest3Image = await loadImage(('./assets/images/hotelguest3.png'))
+
     createCanvas(800, 700)
+
 }
 
 
@@ -43,7 +53,6 @@ function draw() {
 
     if (enter.room2 === true) {
         drawRoom2()
-
     }
 
     if (enter.room3 === true) {
@@ -62,14 +71,20 @@ function draw() {
         enter.room3 = false
     }
 
-    print(enter.lobby)
+    // print(enter.lobby)
 
 }
 
 function drawLobby() {
 
-    fill('black')
-    rect(150, 100, 500, 100)
+    fill(70, 50, 50)
+    rect(150, 100, 500, 100, 10)
+
+    fill('white')
+    textSize(40)
+    textAlign(CENTER, CENTER)
+    text('WELCOME TO THE', 400, 130)
+    text('CROW HOTEL', 400, 170)
 
     fill('maroon')
     rect(0, 500, 800, 200)
@@ -82,6 +97,13 @@ function drawLobby() {
     rect(350, 300, 100, 200)
 
     rect(600, 300, 100, 200)
+
+    fill('yellow')
+    circle(180, 430, 20)
+
+    circle(430, 430, 20)
+
+    circle(680, 430, 20)
 
 }
 
@@ -120,18 +142,23 @@ function returnToLobby() {
 }
 
 function drawRoom1() {
-    fill('brown')
+    fill(190, 130, 120)
     rect(0, 0, 800, 700)
     enter.lobby = false
 
+    imageMode(CENTER)
+    image(guest1Image, width / 2, height / 2, 700, 700)
 
     returnToLobby()
 }
 
 function drawRoom2() {
-    fill(0, 255, 0)
+    fill(255)
     rect(0, 0, 800, 700)
     enter.lobby = false
+
+    imageMode(CENTER)
+    image(guest2Image, width / 2, height / 2, 700, 700)
 
 
     returnToLobby()
@@ -139,10 +166,12 @@ function drawRoom2() {
 }
 
 function drawRoom3() {
-    fill(0, 0, 255)
+    fill(190, 130, 120)
     rect(0, 0, 800, 700)
     enter.lobby = false
 
+    imageMode(CENTER)
+    image(guest3Image, width / 2, height / 2, 700, 700)
 
     returnToLobby()
 }
