@@ -19,7 +19,7 @@ PROTOTYPE 1: Better Bubbles: [![PROTOTYPE 1: Better Bubbles](../../images/better
 PROTOTYPE 2: Food Chain: [![Prototype 2: Food Chain](../../images/foodchain.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-2/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-functions/prototyping-functions-2/js/script.js)
 
-PROTOTYPE 3: Welcome to the Crow Hotel: [![Prototype 3: Welcome to the Crow Hotel](../../images/dailylife.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-3/)
+PROTOTYPE 3: Welcome to the Crow Hotel: [![Prototype 3: Welcome to the Crow Hotel](../../images/welcometothecrowhotel.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-functions/prototyping-functions-3/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-functions/prototyping-functions-3/js/script.js)
 
 ## Attribution
