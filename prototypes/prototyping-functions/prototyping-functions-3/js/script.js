@@ -23,15 +23,45 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-    background(40)
+    background('brown')
 
-    drawDoors()
+    drawLobby()
 
 }
 
-function drawDoors() {
-    fill(255)
+function drawLobby() {
+
+    fill('black')
+    rect(150, 100, 500, 100)
+
+    fill('maroon')
+    rect(0, 500, 800, 200)
+
+    fill(80, 70, 50)
     noStroke()
     rectMode(CORNER)
     rect(100, 300, 100, 200)
+
+    rect(350, 300, 100, 200)
+
+    rect(600, 300, 100, 200)
+}
+
+function mouseClicked() {
+    if (mouseX > 100 && mouseX < 200 && mouseY > 300 && mouseY < 500 || mouseX > 350 && mouseX < 450 && mouseY > 300 && mouseY < 500 || mouseX > 600 && mouseX < 700 && mouseY > 300 && mouseY < 500) {
+        print('woo')
+    }
+}
+
+function drawRoom1() {
+
+}
+
+function drawRoom2() {
+
+
+}
+
+function drawRoom3() {
+
 }
