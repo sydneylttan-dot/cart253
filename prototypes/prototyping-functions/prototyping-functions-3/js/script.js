@@ -11,6 +11,16 @@
 
 "use strict";
 
+
+//VARIABLES
+
+let enter = {
+    room1: false,
+    room2: false,
+    room3: false,
+    lobby: true
+}
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -27,6 +37,33 @@ function draw() {
 
     drawLobby()
 
+    if (enter.room1 === true) {
+        drawRoom1()
+    }
+
+    if (enter.room2 === true) {
+        drawRoom2()
+
+    }
+
+    if (enter.room3 === true) {
+        drawRoom3()
+    }
+
+    if (enter.room1 === false && enter.room2 === false && enter.room3 === false) {
+        drawLobby()
+    }
+
+    // drawRoom1()
+
+    if (enter.lobby === true) {
+        enter.room1 = false
+        enter.room2 = false
+        enter.room3 = false
+    }
+
+    print(enter.lobby)
+
 }
 
 function drawLobby() {
@@ -39,29 +76,73 @@ function drawLobby() {
 
     fill(80, 70, 50)
     noStroke()
-    rectMode(CORNER)
+
     rect(100, 300, 100, 200)
 
     rect(350, 300, 100, 200)
 
     rect(600, 300, 100, 200)
+
 }
 
 function mouseClicked() {
-    if (mouseX > 100 && mouseX < 200 && mouseY > 300 && mouseY < 500 || mouseX > 350 && mouseX < 450 && mouseY > 300 && mouseY < 500 || mouseX > 600 && mouseX < 700 && mouseY > 300 && mouseY < 500) {
-        print('woo')
+
+    if (enter.lobby === true) {
+        if (mouseX > 100 && mouseX < 200 && mouseY > 300 && mouseY < 500) {
+            enter.room1 = true
+        }
+
+        if (mouseX > 350 && mouseX < 450 && mouseY > 300 && mouseY < 500) {
+            enter.room2 = true
+        }
+
+        if (mouseX > 600 && mouseX < 700 && mouseY > 300 && mouseY < 500) {
+            enter.room3 = true
+        }
+    }
+
+    if (mouseX > 630 && mouseX < 750 && mouseY > 600 && mouseY < 650) {
+        enter.lobby = true
+        enter.room1 = false
+        enter.room2 = false
+        enter.room3 = false
     }
 }
 
-function drawRoom1() {
+function returnToLobby() {
+    fill(70, 50, 50)
+    rect(630, 600, 120, 50, 10)
 
+    fill(255)
+    textAlign(CENTER, CENTER)
+    textSize(25)
+    text('LOBBY', 690, 625)
+}
+
+function drawRoom1() {
+    fill('brown')
+    rect(0, 0, 800, 700)
+    enter.lobby = false
+
+
+    returnToLobby()
 }
 
 function drawRoom2() {
+    fill(0, 255, 0)
+    rect(0, 0, 800, 700)
+    enter.lobby = false
 
+
+    returnToLobby()
 
 }
 
 function drawRoom3() {
+    fill(0, 0, 255)
+    rect(0, 0, 800, 700)
+    enter.lobby = false
 
+
+    returnToLobby()
 }
