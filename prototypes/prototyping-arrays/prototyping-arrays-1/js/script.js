@@ -38,7 +38,8 @@ function draw() {
     drawGoldfish();
     goldfishMove();
 
-    foodPhysics(snacks);
+    fishEatFood();
+
 }
 
 function drawFurniture() {
@@ -64,7 +65,7 @@ function drawFurniture() {
 
 //when the mouse is pressed, spawns in goldfish food at the mouse location
 function mousePressed() {
-    if (mouseX > 190 && mouseX < 610) {
+    if (mouseX > 190 && mouseX < 610 && mouseY < 300) {
         snacks.push(feedTheFish(mouseX, mouseY));
     }
 }
@@ -103,7 +104,7 @@ function feedTheFish(x, y) {
         x: x,
         y: y,
         size: 10,
-        speed: 1,
+        speed: 4,
         fill: [255, 200, 100]
     }
     return food;
@@ -118,8 +119,27 @@ function drawFood(food) {
 
 function foodPhysics(food) {
     food.y += food.speed;
+
+    if (food.y > 580 - food.size / 2) {
+        food.speed = 0;
+        food.y = 580 - food.size / 2;
+    }
+
+    if (food.y > 330) {
+        food.speed = 0.3;
+    }
 }
 
 function fishEatFood() {
+
+    noFill();
+    // fill(255)
+    if (goldfish.direction === 1) {
+        circle(goldfish.x + 15, goldfish.y, 20);
+    } else {
+        circle(goldfish.x - 15, goldfish.y, 20);
+    }
+
+
 
 }
