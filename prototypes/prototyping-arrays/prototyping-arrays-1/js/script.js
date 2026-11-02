@@ -32,10 +32,13 @@ function draw() {
 
     for (let snack of snacks) {
         drawFood(snack);
+        foodPhysics(snack);
     }
 
     drawGoldfish();
     goldfishMove();
+
+    foodPhysics(snacks);
 }
 
 function drawFurniture() {
@@ -61,8 +64,9 @@ function drawFurniture() {
 
 //when the mouse is pressed, spawns in goldfish food at the mouse location
 function mousePressed() {
-    // const food = feedTheFish();
-    snacks.push(feedTheFish(mouseX, mouseY));
+    if (mouseX > 190 && mouseX < 610) {
+        snacks.push(feedTheFish(mouseX, mouseY));
+    }
 }
 
 //draws the goldfish
@@ -110,4 +114,12 @@ function drawFood(food) {
     fill(food.fill);
     circle(food.x, food.y, food.size);
     pop();
+}
+
+function foodPhysics(food) {
+    food.y += food.speed;
+}
+
+function fishEatFood() {
+
 }
