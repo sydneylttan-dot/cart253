@@ -12,7 +12,8 @@ let goldfish = {
     y: 500,
     size: 50,
     speed: 2,
-    direction: 1
+    direction: 1,
+    snacksEaten: 0
 };
 
 let snacks = [];
@@ -23,6 +24,17 @@ function setup() {
     createCanvas(800, 800);
 }
 
+let overlapDetect = {
+    right: {
+        x: undefined,
+        y: undefined
+    },
+    left: {
+        x: undefined,
+        y: undefined
+    },
+    size: undefined
+}
 
 /**
 */
@@ -103,9 +115,9 @@ function feedTheFish(x, y) {
     const food = {
         x: x,
         y: y,
-        size: 10,
+        size: random(3, 10),
         speed: 4,
-        fill: [255, 200, 100]
+        fill: [random(200, 255), random(130, 200), random(50, 100)]
     }
     return food;
 }
@@ -132,14 +144,36 @@ function foodPhysics(food) {
 
 function fishEatFood() {
 
+    overlapDetect.right.x = goldfish.x + 20;
+    overlapDetect.right.y = goldfish.y;
+
+    overlapDetect.left.x = goldfish.x - 20;
+    overlapDetect.left.y = goldfish.y;
+
+    overlapDetect.size = 15;
+
     noFill();
     // fill(255)
     if (goldfish.direction === 1) {
-        circle(goldfish.x + 15, goldfish.y, 20);
+        circle(overlapDetect.right.x, overlapDetect.right.y, overlapDetect.size);
     } else {
-        circle(goldfish.x - 15, goldfish.y, 20);
+        circle(overlapDetect.left.x, overlapDetect.left.y, overlapDetect.size);
     }
 
+    for (let snack of snacks) {
 
+        const d = dist(overlapDetect.right.x, overlapDetect.right.y, snack.x, snack.y);
+        const overlap = (d < overlapDetect.size / 2 + snack.size / 2);
+
+        if (overlap) {
+            goldfish.snacksEaten++;
+            snacks.splice(snacks.indexOf(snack), 1);
+        }
+    }
+
+    if (goldfish.snacksEaten > 10) {
+        goldfish.size += 10;
+        goldfish.speed -= 1;
+    }
 
 }
