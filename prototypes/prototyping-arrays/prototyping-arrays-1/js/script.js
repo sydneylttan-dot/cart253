@@ -13,7 +13,8 @@ let goldfish = {
     size: 50,
     speed: 2,
     direction: 1,
-    snacksEaten: 0
+    snacksEaten: 0,
+    full: false
 };
 
 let snacks = [];
@@ -52,6 +53,8 @@ function draw() {
 
     fishEatFood();
 
+    textDisplay();
+
 }
 
 function drawFurniture() {
@@ -77,8 +80,12 @@ function drawFurniture() {
 
 //when the mouse is pressed, spawns in goldfish food at the mouse location
 function mousePressed() {
-    if (mouseX > 190 && mouseX < 610 && mouseY < 300) {
+    if (mouseX > 190 && mouseX < 610 && mouseY < 300 && goldfish.snacksEaten < 30) {
         snacks.push(feedTheFish(mouseX, mouseY));
+    }
+
+    if (goldfish.snacksEaten >= 30) {
+        goldfish.full = true;
     }
 }
 
@@ -132,6 +139,7 @@ function drawFood(food) {
 function foodPhysics(food) {
     food.y += food.speed;
 
+
     if (food.y > 580 - food.size / 2) {
         food.speed = 0;
         food.y = 580 - food.size / 2;
@@ -172,8 +180,35 @@ function fishEatFood() {
     }
 
     if (goldfish.snacksEaten > 10) {
-        goldfish.size += 10;
-        goldfish.speed -= 1;
+        goldfish.size = 55;
+        goldfish.speed = 1;
+    }
+
+    if (goldfish.snacksEaten > 20) {
+        goldfish.size = 60;
+        goldfish.speed = 0.5;
+    }
+
+    if (goldfish.snacksEaten > 30) {
+        goldfish.size = 65;
+        goldfish.speed = 0.25;
+        goldfish.y += random(-0.5, 1);
+    }
+
+    if (goldfish.y > 580 - goldfish.size / 2) {
+        goldfish.y = 580 - goldfish.size / 2;
+    }
+
+}
+
+function textDisplay() {
+
+    if (goldfish.full === true) {
+        fill(170, 170, 255);
+        textSize(50);
+        textStyle(BOLD);
+        textAlign(CENTER, CENTER);
+        text("Plz stop feeding the fish...", 400, 180);
     }
 
 }
