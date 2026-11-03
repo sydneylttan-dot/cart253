@@ -1,4 +1,4 @@
-# Prototyping: Functions
+# Prototyping: Arrays
 
 Sydney Tan
 
@@ -12,7 +12,7 @@ Sydney Tan
 
 Assignment 7 of CART 253. Here are my 3 prototypes for the prototyping arrays assignment.
 
-PROTOTYPE 1: Herbert the Goldfish: [![PROTOTYPE 1: Herbert the Goldfish](../../images/herbertthegoldfish.png.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-arrays/prototyping-arrays-1/)
+PROTOTYPE 1: Herbert the Goldfish: [![PROTOTYPE 1: Herbert the Goldfish](../../images/herbertthegoldfish.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-arrays/prototyping-arrays-1/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-arrays/prototyping-arrays-1/js/script.js)
 
 
