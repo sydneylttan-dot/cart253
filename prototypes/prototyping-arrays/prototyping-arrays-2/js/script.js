@@ -1,8 +1,9 @@
 /**
- * Prototyping Arrays 2: 
+ * Prototyping Arrays 2: Reworked Food Chain
  * Sydney Tan
  * 
  * Remake of a Prototyping Functions (Food Chain) but with arrays. Adds more orbs
+ * Reworked part of the other code so that it can function with arrays
  * 
  * A small prototype where the player grows when eating orbs
  * 
