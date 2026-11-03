@@ -87,15 +87,30 @@ const orbTypes = [
     }
 ]
 
+const orbs = []
+
 /**
  * creates the canvas and sets the initial x/y of the orbs
 */
 function setup() {
     createCanvas(1000, 1000)
 
-    choice = random(orbTypes)
+    let orbAmount = floor(random(10, 16));
 
-    orbSetup(choice)
+    for (let i = 0; i < orbAmount; i++) {
+        let choice = random(orbTypes);
+
+        let orb = {
+            x: random(200, 800),
+            y: random(200, 800),
+            size: choice.size,
+            r: choice.r,
+            g: choice.g,
+            b: choice.b
+        };
+
+        orbs.push(orb);
+    }
 
 }
 
@@ -113,10 +128,11 @@ function draw() {
     // //calls the function that lets the player move
     playerMove()
 
-    // for (let orbTypes of orbs) {
-    drawOrb(choice)
-    // }
-
+    for (let orb of orbs) {
+        drawOrb(orb)
+        orbMove(orb)
+        checkOverlap(player, orb)
+    }
 }
 
 function drawOrb(type) {
@@ -161,60 +177,48 @@ function orbSetup(type) {
     type.y = random(200, 800)
 }
 
+//function that makes the orbs go up and down. like in the orbDraw function, type is replaced by the variables set before setup in the draw loop so that this function can control all of their movements
+function orbMove(type) {
 
+    for (let orb of orbs) {
+        if (timer > 10) {
+            type.y -= 0.03
+        } else if (timer < 10) {
+            type.y += 0.03
+        }
 
+        //when the timer goes above 20, reset it to 0 so that the movement loop above can be restarted
+        if (timer > 20) {
+            timer = 0
+        }
+    }
 
+}
 
+//checks if the user (the player) and the target (the orbs) are overlapping
+//the player's size grows according to the size of the orb
+//if and else if statements check if the target is of a specific size. the player's size grows according to the size of the orb it came in contact with
+//i didnt know how to make the orbs disappear when the player came in contact with it (my usual prefered trick of setting the alpha to 0 doesnt work in this scenario because the orb would still be there even if its alpha was 0)
+//so I just moved the orbs off of the canvas when it came in contact with the player since the player can't leave the canvas
+//it may not be the best but it works :)
+function checkOverlap(user, target) {
 
+    const d = dist(user.x, user.y, target.x, target.y)
+    const overlap = (d < user.size / 2 + target.size / 2)
+    if (overlap) {
+        target.x = 2000
+        target.y = 2000
 
-
-
-// //function that draws the orbs, type is replaced by the respective size mini/small/medium/big/huge variables in the draw loop
-// function orbDraw(type) {
-
-//     fill(type.r, type.g, type.b)
-//     circle(type.x, type.y, type.size)
-// }
-
-// //function that makes the orbs go up and down. like in the orbDraw function, type is replaced by the variables set before setup in the draw loop so that this function can control all of their movements
-// function orbMove(type) {
-
-//     if (timer > 10) {
-//         type.y--
-//     } else if (timer < 10) {
-//         type.y++
-//     }
-
-//     //when the timer goes above 20, reset it to 0 so that the movement loop above can be restarted
-//     if (timer > 20) {
-//         timer = 0
-//     }
-
-// }
-
-// //checks if the user (the player) and the target (the orbs) are overlapping
-// //the player's size grows according to the size of the orb
-// //if and else if statements check if the target is of a specific size. the player's size grows according to the size of the orb it came in contact with
-// //i didnt know how to make the orbs disappear when the player came in contact with it (my usual prefered trick of setting the alpha to 0 doesnt work in this scenario because the orb would still be there even if its alpha was 0)
-// //so I just moved the orbs off of the canvas when it came in contact with the player since the player can't leave the canvas
-// //it may not be the best but it works :)
-// function checkOverlap(user, target) {
-//     const d = dist(user.x, user.y, target.x, target.y)
-//     const overlap = (d < user.size / 2 + target.size / 2)
-//     if (overlap) {
-//         target.x = 2000
-//         target.y = 2000
-
-//         if (target.size === 10) {
-//             user.size += 10
-//         } else if (target.size === 30) {
-//             user.size += 30
-//         } else if (target.size === 50) {
-//             user.size += 50
-//         } else if (target.size === 70) {
-//             user.size += 70
-//         } else if (target.size === 100) {
-//             user.size += 100
-//         }
-//     }
-// }
+        if (target.size === 10) {
+            user.size += 5
+        } else if (target.size === 30) {
+            user.size += 10
+        } else if (target.size === 50) {
+            user.size += 20
+        } else if (target.size === 70) {
+            user.size += 40
+        } else if (target.size === 100) {
+            user.size += 50
+        }
+    }
+}
