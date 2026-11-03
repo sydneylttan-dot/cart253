@@ -40,7 +40,10 @@ let walls = {
     bottom: 1000
 }
 
+//orb presets
 const orbTypes = [
+
+    //mini orbs
     {
         x: undefined,
         y: undefined,
@@ -50,6 +53,7 @@ const orbTypes = [
         b: 200,
     },
 
+    //small orbs
     {
         x: undefined,
         y: undefined,
@@ -59,6 +63,7 @@ const orbTypes = [
         b: 100,
     },
 
+    //medium orbs
     {
         x: undefined,
         y: undefined,
@@ -68,6 +73,7 @@ const orbTypes = [
         b: 255,
     },
 
+    //big orbs
     {
         x: undefined,
         y: undefined,
@@ -77,6 +83,7 @@ const orbTypes = [
         b: 255,
     },
 
+    //huge orbs
     {
         x: undefined,
         y: undefined,
@@ -87,10 +94,14 @@ const orbTypes = [
     }
 ]
 
+//for the orb drawing array
 const orbs = []
 
 /**
- * creates the canvas and sets the initial x/y of the orbs
+ * creates the canvas
+ * sets how many orbs can be created
+ * randomizes which orb types are created
+ * variables for orb
 */
 function setup() {
     createCanvas(1000, 1000)
@@ -116,6 +127,7 @@ function setup() {
 
 /**
  * draws the bg, calls the functions
+ * increases the timer for orbMove
 */
 function draw() {
     background(40)
@@ -128,6 +140,7 @@ function draw() {
     // //calls the function that lets the player move
     playerMove()
 
+    //draws the orbs and calls the move and overlap functions for each orb created
     for (let orb of orbs) {
         drawOrb(orb)
         orbMove(orb)
@@ -135,6 +148,7 @@ function draw() {
     }
 }
 
+//draws the orb
 function drawOrb(type) {
     fill(type.r, type.g, type.b)
     circle(type.x, type.y, type.size)
