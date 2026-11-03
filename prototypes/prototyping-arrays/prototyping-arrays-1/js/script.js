@@ -189,7 +189,7 @@ function fishEatFood() {
         goldfish.speed = 0.5;
     }
 
-    if (goldfish.snacksEaten > 30) {
+    if (goldfish.snacksEaten >= 30) {
         goldfish.size = 65;
         goldfish.speed = 0.25;
         goldfish.y += random(-0.5, 1);
