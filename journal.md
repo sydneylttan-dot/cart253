@@ -74,3 +74,5 @@ As I mentioned last week, I wanted to make a fish feeding simulator using arrays
 
 While making the size changes for Herbert, I made a slight mistake in my code I thought it was funny.
 ![[Oops](./images/slightmistake.mp4)]
+
+<video src="./images/slightmistake.mp4" controls width="100%"></video>
