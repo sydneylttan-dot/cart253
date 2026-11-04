@@ -19,7 +19,7 @@ PROTOTYPE 1: Herbert the Goldfish: [![PROTOTYPE 1: Herbert the Goldfish](../../i
 PROTOTYPE 2: Reworked Food Chain: [![Prototype 2: Reworked Food Chain](../../images/reworkedfoodchain.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-arrays/prototyping-arrays-2/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-arrays/prototyping-arrays-2/js/script.js)
 
-PROTOTYPE 3: Welcome to the Crow Hotel: [![Prototype 3: Welcome to the Crow Hotel](../../images/welcometothecrowhotel.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-arrays/prototyping-arrays-3/)
+PROTOTYPE 3: Return of the Crow(s): [![Prototype 3: Return of the Crow(s)](../../images/returnofthecrows.png)](https://sydneylttan-dot.github.io/cart253/prototypes/prototyping-arrays/prototyping-arrays-3/)
 [View code](https://github.com/sydneylttan-dot/cart253/blob/main/prototypes/prototyping-arrays/prototyping-arrays-3/js/script.js)
 
 ## Attribution
