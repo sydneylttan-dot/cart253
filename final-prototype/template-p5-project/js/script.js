@@ -20,9 +20,22 @@
  * - maybe add dialogue????????
  * 
  * - cut down on some stuff if too complicated (self service system first, and then randomized shelf elements)
+ * 
+ * - maybe add different minigames per shelf? 
+ * - shelf 1: type the food names within a time limit to get the food
+ * - shelf 2: the cans move so you have to shoot them to get them (still have to pay attention to money)
+ * - shelf 3: elements are available depending on the time of day the player runs the code (time gated food)
+ * 
+ * 
+ * - find a good font
  */
 
 "use strict";
+
+
+//----------------------------------------------------------------------------------------------//
+
+//VARIABLES
 
 let shoppingListToggle = false
 
@@ -34,6 +47,13 @@ let sceneSelect = {
     shelfMiddle: false
 }
 
+let bal = 0
+
+
+//----------------------------------------------------------------------------------------------//
+
+//SETUP
+
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
@@ -41,6 +61,10 @@ function setup() {
     createCanvas(1000, 800)
 }
 
+
+//----------------------------------------------------------------------------------------------//
+
+//DRAW LOOP
 
 /**
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
@@ -63,6 +87,11 @@ function draw() {
 
     print(sceneSelect.shopFront, sceneSelect.interior, sceneSelect.shelf1, sceneSelect.shelf2, sceneSelect.shelfMiddle)
 }
+
+
+//----------------------------------------------------------------------------------------------//
+
+//UI ELEMENTS
 
 function shoppingListButton() {
     noStroke()
@@ -103,71 +132,10 @@ function moneyCounterDisplay() {
     rect(750, 700, 200, 50)
 }
 
-function mouseClicked() {
-    if (shoppingListToggle === false && mouseX > 675 && mouseX < 725 && mouseY > 700 && mouseY < 750) {
-        shoppingListToggle = true
-        // print('weewoo')
-    }
 
-    if (shoppingListToggle === true && mouseX > 900 && mouseX < 950 && mouseY > 50 && mouseY < 100) {
-        shoppingListToggle = false
-        // print('ah')
-    }
-}
+//----------------------------------------------------------------------------------------------//
 
-function keyTyped() {
-
-    //shopping list on/off
-    //wanted to make it close on esc, did not work so changed to l
-    if (key === 'l' && shoppingListToggle === true) {
-        shoppingListToggle = false
-    } else if (key === 'l' && shoppingListToggle === false) {
-        shoppingListToggle = true
-    }
-
-
-    //temporary scene changes (will change to point and click later)
-    if (key === '1') {
-        sceneSelect.interior = false
-        sceneSelect.shopFront = true
-        sceneSelect.shelf1 = false
-        sceneSelect.shelf2 = false
-        sceneSelect.shelfMiddle = false
-    }
-
-    if (key === '2') {
-        sceneSelect.interior = true
-        sceneSelect.shopFront = false
-        sceneSelect.shelf1 = false
-        sceneSelect.shelf2 = false
-        sceneSelect.shelfMiddle = false
-    }
-
-    if (sceneSelect.interior === true && key === '3') {
-        sceneSelect.shelf1 = true
-        sceneSelect.interior = false
-        sceneSelect.shopFront = false
-        sceneSelect.shelf2 = false
-        sceneSelect.shelfMiddle = false
-    }
-
-    if (sceneSelect.interior === true && key === '4') {
-        sceneSelect.shelf2 = true
-        sceneSelect.shelf1 = false
-        sceneSelect.interior = false
-        sceneSelect.shopFront = false
-        sceneSelect.shelfMiddle = false
-    }
-
-    if (sceneSelect.interior === true && key === '5') {
-        sceneSelect.shelf1 = false
-        sceneSelect.interior = false
-        sceneSelect.shopFront = false
-        sceneSelect.shelf2 = false
-        sceneSelect.shelfMiddle = true
-    }
-
-}
+//DRAW SCENES
 
 function drawShopFront() {
 
@@ -204,6 +172,13 @@ function drawShopFront() {
     fill(40, 100, 60)
     rect(100, 250, 800, 50)
     quad(200, 100, 800, 100, 900, 250, 100, 250)
+
+    //door
+
+    // fill(255)
+    // textAlign(CENTER)
+    // textSize(30)
+    // text('GROCERIES', width / 2, 280)
 
 }
 
@@ -259,6 +234,15 @@ function drawShelf1() {
     rect(50, 200, 900, 200)
 
     rect(50, 500, 900, 200)
+
+    noStroke()
+    fill(255, 250, 250)
+    rect(75, 700, 300, 50)
+
+    fill(50, 40, 40)
+    textAlign(LEFT)
+    textSize(30)
+    text('temp text', 85, 735)
 }
 
 function drawShelf2() {
@@ -277,6 +261,16 @@ function drawShelf2() {
     rect(50, 500, 900, 200)
 
     rect(0, 0, 100, 100)
+
+    push()
+    stroke(255, 0, 0)
+    strokeWeight(3)
+    noFill()
+    circle(mouseX, mouseY, 80)
+    line(mouseX - 50, mouseY, mouseX + 50, mouseY)
+    line(mouseX, mouseY - 50, mouseX, mouseY + 50)
+    pop()
+
 }
 
 function drawShelfMiddle() {
@@ -292,6 +286,11 @@ function drawShelfMiddle() {
 
     rect(50, 550, 900, 200)
 }
+
+
+//----------------------------------------------------------------------------------------------//
+
+//SCENE MANAGER
 
 function sceneManager() {
     if (sceneSelect.interior === true) {
@@ -313,4 +312,76 @@ function sceneManager() {
     if (sceneSelect.shelfMiddle === true) {
         drawShelfMiddle()
     }
+}
+
+
+//----------------------------------------------------------------------------------------------//
+
+//EVENTS
+
+function mouseClicked() {
+    if (shoppingListToggle === false && mouseX > 675 && mouseX < 725 && mouseY > 700 && mouseY < 750) {
+        shoppingListToggle = true
+        // print('weewoo')
+    }
+
+    if (shoppingListToggle === true && mouseX > 900 && mouseX < 950 && mouseY > 50 && mouseY < 100) {
+        shoppingListToggle = false
+        // print('ah')
+    }
+}
+
+//will change later for point and click
+function keyTyped() {
+
+    //shopping list on/off
+    //wanted to make it close on esc, did not work so changed to l
+    if (key === 'l' && shoppingListToggle === true) {
+        shoppingListToggle = false
+    } else if (key === 'l' && shoppingListToggle === false) {
+        shoppingListToggle = true
+    }
+
+
+    //temporary scene changes (will change to point and click later)
+    if (sceneSelect.interior === true && key === '1') {
+        sceneSelect.interior = false
+        sceneSelect.shopFront = true
+        sceneSelect.shelf1 = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (key === '2') {
+        sceneSelect.interior = true
+        sceneSelect.shopFront = false
+        sceneSelect.shelf1 = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '3') {
+        sceneSelect.shelf1 = true
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '4') {
+        sceneSelect.shelf2 = true
+        sceneSelect.shelf1 = false
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '5') {
+        sceneSelect.shelf1 = false
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = true
+    }
+
 }
