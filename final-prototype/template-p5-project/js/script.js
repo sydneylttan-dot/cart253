@@ -28,7 +28,10 @@ let shoppingListToggle = false
 
 let sceneSelect = {
     shopFront: true,
-    interior: false
+    interior: false,
+    shelf1: false,
+    shelf2: false,
+    shelfMiddle: false
 }
 
 /**
@@ -54,7 +57,11 @@ function draw() {
 
     shoppingListDisplay()
 
-    print(sceneSelect.interior, sceneSelect.shopFront)
+    if (shoppingListToggle === true) {
+        shoppingListCloseButton()
+    }
+
+    print(sceneSelect.shopFront, sceneSelect.interior, sceneSelect.shelf1, sceneSelect.shelf2, sceneSelect.shelfMiddle)
 }
 
 function shoppingListButton() {
@@ -77,6 +84,19 @@ function shoppingListDisplay() {
 
 }
 
+function shoppingListCloseButton() {
+
+    //button
+    noStroke()
+    fill(255, 250, 250)
+    rect(900, 50, 50, 50)
+
+    //X
+    fill(50, 40, 40)
+    quad(905, 55, 910, 55, 945, 95, 940, 95)
+    quad(940, 55, 945, 55, 910, 95, 905, 95)
+}
+
 function moneyCounterDisplay() {
     noStroke()
     fill(255, 250, 250)
@@ -84,8 +104,14 @@ function moneyCounterDisplay() {
 }
 
 function mouseClicked() {
-    if (mouseX > 675 && mouseX < 725 && mouseY > 700 && mouseY < 750) {
+    if (shoppingListToggle === false && mouseX > 675 && mouseX < 725 && mouseY > 700 && mouseY < 750) {
         shoppingListToggle = true
+        // print('weewoo')
+    }
+
+    if (shoppingListToggle === true && mouseX > 900 && mouseX < 950 && mouseY > 50 && mouseY < 100) {
+        shoppingListToggle = false
+        // print('ah')
     }
 }
 
@@ -104,11 +130,41 @@ function keyTyped() {
     if (key === '1') {
         sceneSelect.interior = false
         sceneSelect.shopFront = true
+        sceneSelect.shelf1 = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
     }
 
     if (key === '2') {
         sceneSelect.interior = true
         sceneSelect.shopFront = false
+        sceneSelect.shelf1 = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '3') {
+        sceneSelect.shelf1 = true
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '4') {
+        sceneSelect.shelf2 = true
+        sceneSelect.shelf1 = false
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelfMiddle = false
+    }
+
+    if (sceneSelect.interior === true && key === '5') {
+        sceneSelect.shelf1 = false
+        sceneSelect.interior = false
+        sceneSelect.shopFront = false
+        sceneSelect.shelf2 = false
+        sceneSelect.shelfMiddle = true
     }
 
 }
@@ -149,8 +205,6 @@ function drawShopFront() {
     rect(100, 250, 800, 50)
     quad(200, 100, 800, 100, 900, 250, 100, 250)
 
-
-
 }
 
 function drawInterior() {
@@ -184,11 +238,59 @@ function drawInterior() {
     quad(0, -100, 300, 100, 300, 700, 0, 900)
     quad(1000, -100, 700, 100, 700, 700, 1000, 900)
 
-    // //shelf interior
-    // fill(170, 170, 180)
-    // quad(0, 0, 250, 150, 250, 650, 0, 800)
-    // quad(1000, 0, 750, 150, 750, 650, 1000, 800)
+    //shelf interior
+    fill(170, 170, 180)
+    quad(0, 0, 250, 150, 250, 650, 0, 800)
+    quad(1000, 0, 750, 150, 750, 650, 1000, 800)
 
+}
+
+function drawShelf1() {
+    //bg
+    fill(170, 140, 130)
+    rect(0, 0, 1000, 800)
+
+    //shelf base
+    fill(210, 210, 220)
+    rect(0, 100, 1000, 700)
+
+    //shelf interior
+    fill(170, 170, 180)
+    rect(50, 200, 900, 200)
+
+    rect(50, 500, 900, 200)
+}
+
+function drawShelf2() {
+    //bg
+    fill(170, 140, 130)
+    rect(0, 0, 1000, 800)
+
+    //shelf base
+    fill(210, 210, 220)
+    rect(0, 100, 1000, 700)
+
+    //shelf interior
+    fill(170, 170, 180)
+    rect(50, 200, 900, 200)
+
+    rect(50, 500, 900, 200)
+
+    rect(0, 0, 100, 100)
+}
+
+function drawShelfMiddle() {
+    //bg
+    fill(240)
+    rect(0, 0, 1000, 800)
+
+    //self interior
+    fill(210)
+    rect(50, 50, 900, 200)
+
+    rect(50, 300, 900, 200)
+
+    rect(50, 550, 900, 200)
 }
 
 function sceneManager() {
@@ -198,5 +300,17 @@ function sceneManager() {
 
     if (sceneSelect.shopFront === true) {
         drawShopFront()
+    }
+
+    if (sceneSelect.shelf1 === true) {
+        drawShelf1()
+    }
+
+    if (sceneSelect.shelf2 === true) {
+        drawShelf2()
+    }
+
+    if (sceneSelect.shelfMiddle === true) {
+        drawShelfMiddle()
     }
 }
