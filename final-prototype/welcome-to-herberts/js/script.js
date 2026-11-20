@@ -50,6 +50,10 @@ let sceneSelect = {
 let bal = 0
 
 
+let shoppingListItems = ['Beans', 'Corn', 'Peaches', 'Ham', 'Tomato sauce', 'Soup', 'Peas', 'Tuna', 'Ice cream', 'Cookies', 'Mochi']
+
+let listItems = []
+
 //----------------------------------------------------------------------------------------------//
 
 //SETUP
@@ -59,6 +63,8 @@ let bal = 0
 */
 function setup() {
     createCanvas(1000, 800)
+
+
 }
 
 
@@ -109,6 +115,10 @@ function shoppingListDisplay() {
 
         fill(255, 250, 250)
         rect(250, 100, 500, 600)
+
+        fill(0)
+        textSize(20)
+        text(shoppingListItems, 260, 170)
     }
 
 }
@@ -260,7 +270,7 @@ function drawShelf2() {
 
     rect(50, 500, 900, 200)
 
-    rect(0, 0, 100, 100)
+    // rect(0, 0, 100, 100)
 
     push()
     stroke(255, 0, 0)
@@ -281,6 +291,7 @@ function drawShelfMiddle() {
     //self interior
     fill(210)
     rect(50, 50, 900, 200)
+
 
     rect(50, 300, 900, 200)
 
