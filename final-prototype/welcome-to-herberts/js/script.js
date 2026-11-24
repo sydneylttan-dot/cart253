@@ -22,7 +22,7 @@
  * - cut down on some stuff if too complicated (self service system first, and then randomized shelf elements)
  * 
  * - maybe add different minigames per shelf? 
- * - shelf 1: type the food names within a time limit to get the food
+ * - shelf 1: type the food names within a time limit to get the food --> changed to arrow key combination
  * - shelf 2: the cans move so you have to shoot them to get them (still have to pay attention to money)
  * - shelf 3: elements are available depending on the time of day the player runs the code (time gated food)
  * 
@@ -52,7 +52,9 @@ let bal = 0
 
 let shoppingListItems = ['Beans', 'Corn', 'Peaches', 'Ham', 'Tomato sauce', 'Soup', 'Peas', 'Tuna', 'Ice cream', 'Cookies', 'Mochi']
 
-let listItems = []
+// let listItems = []
+
+let choice
 
 //----------------------------------------------------------------------------------------------//
 
@@ -64,6 +66,11 @@ let listItems = []
 function setup() {
     createCanvas(1000, 800)
 
+    // let randomShoppingListItems = random(shoppingListItems)
+
+    for (let item of shoppingListItems) {
+        choice = shuffle(shoppingListItems).slice(0, 10);
+    }
 
 }
 
@@ -78,7 +85,6 @@ function setup() {
 function draw() {
     background(220, 210, 200)
 
-
     sceneManager()
 
     shoppingListButton()
@@ -91,7 +97,14 @@ function draw() {
         shoppingListCloseButton()
     }
 
+    typingDisplay()
+
     print(sceneSelect.shopFront, sceneSelect.interior, sceneSelect.shelf1, sceneSelect.shelf2, sceneSelect.shelfMiddle)
+
+    // for (let item of shoppingListItems) {
+    //     choice = random(shoppingListItems)
+    //     text(choice, 100, 100)
+    // }
 }
 
 
@@ -117,8 +130,11 @@ function shoppingListDisplay() {
         rect(250, 100, 500, 600)
 
         fill(0)
-        textSize(20)
-        text(shoppingListItems, 260, 170)
+        textSize(30)
+        textLeading(45)
+        text('Shopping List:', 280, 180)
+        textSize(25)
+        text(choice.join("\n"), 280, 230)
     }
 
 }
@@ -140,6 +156,10 @@ function moneyCounterDisplay() {
     noStroke()
     fill(255, 250, 250)
     rect(750, 700, 200, 50)
+
+    fill(0)
+    textSize(30)
+    text('$' + bal, 760, 735)
 }
 
 
@@ -184,7 +204,12 @@ function drawShopFront() {
     quad(200, 100, 800, 100, 900, 250, 100, 250)
 
     //door
+    // fill(190)
+    // stroke(40)
+    // strokeWeight(20)
+    // rect(400, 350, 200, 300)
 
+    //text
     // fill(255)
     // textAlign(CENTER)
     // textSize(30)
@@ -252,7 +277,7 @@ function drawShelf1() {
     fill(50, 40, 40)
     textAlign(LEFT)
     textSize(30)
-    text('temp text', 85, 735)
+    text(shoppingListItems[random(0, 10)], 85, 735)
 }
 
 function drawShelf2() {
@@ -395,4 +420,16 @@ function keyTyped() {
         sceneSelect.shelfMiddle = true
     }
 
+}
+
+
+//----------------------------------------------------------------------------------------------//
+//Scene specific stuff
+
+function typingDisplay() {
+    if (keyIsPressed === true) {
+        fill(255)
+        textSize(50)
+        text(key, 100, 100)
+    }
 }
