@@ -28,6 +28,7 @@
  * 
  * 
  * - find a good font
+ * - add a cart view
  */
 
 "use strict";
@@ -38,6 +39,10 @@
 //VARIABLES
 
 let shoppingListToggle = false
+
+let leaveConfirmationDisplay = false;
+
+let canCheckOut = false;
 
 let sceneSelect = {
     shopFront: true,
@@ -97,14 +102,18 @@ function draw() {
         shoppingListCloseButton()
     }
 
-    typingDisplay()
+    // print(sceneSelect.shopFront, sceneSelect.interior, sceneSelect.shelf1, sceneSelect.shelf2, sceneSelect.shelfMiddle)
 
-    print(sceneSelect.shopFront, sceneSelect.interior, sceneSelect.shelf1, sceneSelect.shelf2, sceneSelect.shelfMiddle)
+    // print(sceneSelect.interior, key, leaveConfirmationDisplay)
 
     // for (let item of shoppingListItems) {
     //     choice = random(shoppingListItems)
     //     text(choice, 100, 100)
     // }
+
+    if (leaveConfirmationDisplay === true) {
+        leaveConfirmationScreen()
+    }
 }
 
 
@@ -160,6 +169,27 @@ function moneyCounterDisplay() {
     fill(0)
     textSize(30)
     text('$' + bal, 760, 735)
+}
+
+function leaveConfirmationScreen() {
+
+    //lower screen brightness
+    fill(0, 0, 0, 50)
+    rect(0, 0, 1000, 800)
+
+    push()
+    rectMode(CENTER)
+    fill(255)
+    rect(width / 2, height / 2, 400, 250)
+    textAlign(CENTER)
+    fill(0)
+    text('Are you sure you want \nto check out', width / 2, height / 2 - 40)
+    text('Yes', 400, 505)
+    text('No', 600, 505)
+    stroke(10)
+    line(300, 460, 700, 460)
+    line(500, 460, 500, 525)
+    pop()
 }
 
 
@@ -277,7 +307,7 @@ function drawShelf1() {
     fill(50, 40, 40)
     textAlign(LEFT)
     textSize(30)
-    text(shoppingListItems[random(0, 10)], 85, 735)
+    text(key, 85, 735)
 }
 
 function drawShelf2() {
@@ -365,6 +395,20 @@ function mouseClicked() {
         shoppingListToggle = false
         // print('ah')
     }
+
+    if (leaveConfirmationDisplay === true) {
+        if (mouseX > 300 && mouseX < 500 && mouseY > 460 && mouseY < 525) {
+            canCheckOut = true
+            leaveConfirmationDisplay = false
+            print('yay')
+        }
+
+        if (mouseX > 500 && mouseX < 700 && mouseY > 460 && mouseY < 525) {
+            leaveConfirmationDisplay = false
+        }
+    }
+
+    // print(mouseX, mouseY)
 }
 
 //will change later for point and click
@@ -420,16 +464,20 @@ function keyTyped() {
         sceneSelect.shelfMiddle = true
     }
 
+    if (sceneSelect.interior === true && key === '6') {
+        leaveConfirmationDisplay = true
+    }
+
 }
 
 
 //----------------------------------------------------------------------------------------------//
 //Scene specific stuff
 
-function typingDisplay() {
-    if (keyIsPressed === true) {
-        fill(255)
-        textSize(50)
-        text(key, 100, 100)
-    }
-}
+// function typingDisplay() {
+//     if (keyIsPressed === true) {
+//         fill(255)
+//         textSize(50)
+//         text(key, 100, 100)
+//     }
+// }
