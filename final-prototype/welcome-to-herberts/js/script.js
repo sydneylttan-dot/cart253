@@ -29,6 +29,8 @@
  * 
  * - find a good font
  * - add a cart view
+ * - when the player leaves the grocery shop, a screen appears saying that they walked home and then boom
+ * - herbert the goldfish appears
  */
 
 "use strict";
