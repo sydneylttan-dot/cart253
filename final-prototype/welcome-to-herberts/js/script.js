@@ -61,7 +61,287 @@ let shoppingListItems = ['Beans', 'Corn', 'Peaches', 'Ham', 'Tomato sauce', 'Sou
 
 // let listItems = []
 
+let itemsOnSale = [
+
+    //beans
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //brown
+        fill1: {
+            r: 200,
+            g: 120,
+            b: 100,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //corn
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //peaches
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+    //ham
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //tomato sauce
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //soup
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //peas
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //tuna
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //ice cream
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //cookies
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+    //mochi
+    {
+        x: undefined,
+        y: undefined,
+        width: 110,
+        height: {
+            1: 170,
+            2: 120,
+        },
+
+        //red
+        fill1: {
+            r: 255,
+            g: 0,
+            b: 0,
+        },
+
+        //white
+        fill2: {
+            r: 255,
+            g: 0,
+            b: 0,
+        }
+    },
+
+]
+
 let choice
+
+let stockChoice
 
 //----------------------------------------------------------------------------------------------//
 
@@ -78,6 +358,10 @@ function setup() {
     for (let item of shoppingListItems) {
         choice = shuffle(shoppingListItems).slice(0, 10);
     }
+
+    // for(let product of itemsOnSale){
+    //     stockChoice = 
+    // }
 
 }
 
@@ -355,6 +639,10 @@ function drawShelfMiddle() {
     rect(50, 550, 900, 200)
 }
 
+function drawCheckOut() {
+
+}
+
 
 //----------------------------------------------------------------------------------------------//
 
@@ -379,6 +667,10 @@ function sceneManager() {
 
     if (sceneSelect.shelfMiddle === true) {
         drawShelfMiddle()
+    }
+
+    if (canCheckOut === true) {
+        drawCheckOut()
     }
 }
 
